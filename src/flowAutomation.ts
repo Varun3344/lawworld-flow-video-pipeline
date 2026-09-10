@@ -865,10 +865,11 @@ export class FlowAutomation {
     // 0. Layout B: settings behind the "tune" button
     if (await this.applySettingsPanel(ratio)) return;
 
-    // 1. Click bottom settings pill (e.g., "Video · 720p · 8s · 16:9")
-    const settingsPill = await this.findFirstSelector(CONFIG.SELECTORS.SETTINGS_PILL_BTN);
-    if (settingsPill) {
-      await this.page.click(settingsPill);
+    // 1. Ensure the settings popup is OPEN. This used to click the pill unconditionally, but the pill is a
+    //    toggle: after selectModelFamily() the popup could still be open, so the click closed it and every
+    //    lookup below then silently missed — the aspect and duration were never applied.
+    const pillOpen = await this.openSettingsPill();
+    if (pillOpen) {
       await this.page.waitForTimeout(1000);
 
       // 2. Click the requested aspect option in the settings popup (9:16 for avatar scenes, 16:9 for B-roll)
