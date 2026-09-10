@@ -1,0 +1,17 @@
+{
+  "_comment": "30s Case 1. Narration runs unbroken from three 10s presenter takes; the picture leaves him for two thirds of it.",
+  "root": "./downloads/LawWorld_30s_Case1",
+  "output": "./downloads/LawWorld_30s_Case1/LawWorld_Case1_30s.mp4",
+  "presenter": ["s1_hook.mp4", "s2_divert.mp4", "s3_ruling.mp4"],
+  "segments": [
+    { "from": 0,    "to": 3.5,  "source": "presenter" },
+    { "from": 3.5,  "to": 7.0,  "source": "broll",  "clip": "broll_realistic/b1_corridor_broll.mp4" },
+    { "from": 7.0,  "to": 10.0, "source": "broll",  "clip": "broll_realistic/b2_counter_broll.mp4" },
+    { "from": 10.0, "to": 15.5, "source": "motion", "clip": "motion/mg_chain.mp4", "at": 0.4 },
+    { "from": 15.5, "to": 19.0, "source": "broll",  "clip": "broll_realistic/b3_affidavit_broll.mp4" },
+    { "from": 19.0, "to": 20.5, "source": "presenter" },
+    { "from": 20.5, "to": 24.5, "source": "motion", "clip": "motion/mg_sections.mp4", "at": 0.4 },
+    { "from": 24.5, "to": 27.0, "source": "broll",  "clip": "broll_realistic/b4_bench_broll.mp4" },
+    { "from": 27.0, "to": 30.0, "source": "presenter" }
+  ]
+}
