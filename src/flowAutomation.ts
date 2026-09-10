@@ -1440,7 +1440,7 @@ export class FlowAutomation {
     if (!pacing.isOptimal) {
       console.warn(`[Pacing Warning] ${pacing.warning}`);
     } else {
-      console.log(`[Pacing OK] Dialogue length: ${pacing.wordCount} words (fits ~10s clip nicely).`);
+      console.log(`[Pacing OK] Dialogue length: ${pacing.wordCount} words (fits the ${this.config.clipDurationSeconds || 10}s clip nicely).`);
     }
 
     console.log(`[Prompt] Prompt for ${scene.sceneId}:`);

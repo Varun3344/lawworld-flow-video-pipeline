@@ -5,8 +5,8 @@
   "brollAspect": "16:9",
   "brollStyle": "realistic",
   "brollSetting": "Set in a real Indian legal setting: real Indian people in ordinary modern clothing, real Indian courthouse, government office and small-town locations. Documentary realism, no animation, no cartoon, no illustration, no 3D render.",
-  "clipDurationSeconds": 10,
-  "maxWordsPerClip": 33,
+  "clipDurationSeconds": 8,
+  "maxWordsPerClip": 26,
   "speedMultiplier": 1.1,
   "downloadFolder": "./downloads/LawWorld_30s_Case1",
   "useLastFrameReference": true,
@@ -58,21 +58,28 @@
       "sceneId": "s1_hook",
       "sanitizeDialogue": false,
       "visual3D": "Ravishankar standing and speaking to camera, same pose and framing as every other clip, in the same real law office, nothing held in his hands, no graphics, no text.",
-      "dialogue": "A man in Bengaluru complained about a civic amenity site allotment. He went to the police, to the Lokayukta, even to the Governor. Nobody acted. So he went to a Magistrate."
+      "dialogue": "A man in Bengaluru complained about a civic amenity site allotment. He went to the police, to the Lokayukta, even to the Governor."
     },
     {
-      "sceneId": "s2_turn",
+      "sceneId": "s2_nobody",
       "sanitizeDialogue": false,
       "visual3D": "Ravishankar standing and speaking to camera, same pose and framing as every other clip, in the same real law office, nothing held in his hands, no graphics, no text.",
-      "dialogue": "The trial court spotted an unverified affidavit. Instead of ordering an investigation under Section one seventy five, it diverted the whole case into a Section two twenty three enquiry."
+      "dialogue": "Nobody acted. So he filed a private complaint before a Magistrate. That is where the real trouble began."
     },
     {
-      "sceneId": "s3_ruling",
+      "sceneId": "s3_divert",
       "sanitizeDialogue": false,
       "visual3D": "Ravishankar standing and speaking to camera, same pose and framing as every other clip, in the same real law office, nothing held in his hands, no graphics, no text.",
-      "dialogue": "Justice Nagaprasanna disagreed. An unverified affidavit is a curable defect, not a fatal one. It cannot extinguish a complaint before that complaint has even begun."
+      "dialogue": "The trial court found an unverified affidavit, and diverted the case from a Section one seventy five investigation into a Section two twenty three enquiry."
+    },
+    {
+      "sceneId": "s4_ruling",
+      "sanitizeDialogue": false,
+      "visual3D": "Ravishankar standing and speaking to camera, same pose and framing as every other clip, in the same real law office, nothing held in his hands, no graphics, no text.",
+      "dialogue": "Justice Nagaprasanna disagreed. An unverified affidavit is a curable defect, not a fatal one. It cannot extinguish a complaint."
     }
   ],
   "model": "Veo 3.1 - Fast",
-  "resolution": ""
+  "resolution": "",
+  "flowProjectUrl": "https://flow.google.com/project/72f69915-d028-4cbd-851d-ee4c24031ca1"
 }
