@@ -888,14 +888,38 @@ export class FlowAutomation {
       return b ? (b.textContent || '').trim().replace(/\s+/g, ' ') : '';
     }).catch(() => '');
 
-    const clickExact = async (label: string): Promise<boolean> => {
-      const loc = this.page.locator(
-        `button:text-is("${label}"), [role="radio"]:text-is("${label}"), [role="option"]:text-is("${label}"), li:text-is("${label}")`
-      ).first();
+    // Options render with an icon glyph fused to the label — the 16:9 chip reads "crop_16_916:9", not "16:9",
+    // so exact-text matching could never find it. Match on a regex over the element's text instead.
+    const clickChip = async (rx: RegExp): Promise<boolean> => {
+      const loc = this.page.locator('button, [role="radio"], [role="option"], li').filter({ hasText: rx }).first();
       if (!(await loc.count().catch(() => 0))) return false;
       await loc.click({ timeout: 4000 }).catch(() => {});
       await this.page.waitForTimeout(450);
       return true;
+    };
+
+    /** True once the duration chips are on screen, which only happens when the panel is really open. */
+    const panelOpen = async (): Promise<boolean> => this.page.evaluate(() =>
+      Array.from(document.querySelectorAll('button, [role="radio"], [role="option"], li')).some(e => {
+        const r = (e as HTMLElement).getBoundingClientRect();
+        return r.width > 0 && r.width < 200 && /^\d+\s*s$/.test((e.textContent || '').trim());
+      })).catch(() => false);
+
+    /** Playwright click first; fall back to the DOM click that the read-only probe proved opens this panel. */
+    const openPanel = async (): Promise<boolean> => {
+      const trigger = this.page.locator('button[aria-label="Settings trigger"]').first();
+      if (await trigger.count().catch(() => 0)) {
+        await trigger.click({ timeout: 5000 }).catch(() => {});
+        await this.page.waitForTimeout(1400);
+        if (await panelOpen()) return true;
+      }
+      await this.page.evaluate(() => {
+        const b = Array.from(document.querySelectorAll('button'))
+          .find(x => /Video\s*·/.test(x.textContent || '') || (x.getAttribute('aria-label') || '') === 'Settings trigger');
+        if (b) (b as HTMLElement).click();
+      }).catch(() => {});
+      await this.page.waitForTimeout(1400);
+      return panelOpen();
     };
 
     const wanted = (p: string) =>
@@ -904,24 +928,17 @@ export class FlowAutomation {
 
     let pill = '';
     for (let attempt = 1; attempt <= 3; attempt++) {
-      await this.page.keyboard.press('Escape').catch(() => {});
-      await this.page.waitForTimeout(600);
-      const trigger = this.page.locator('button[aria-label="Settings trigger"]').first();
-      if (await trigger.count().catch(() => 0)) await trigger.click({ timeout: 5000 }).catch(() => {});
-      else {
-        const sel = await this.findFirstSelector(CONFIG.SELECTORS.SETTINGS_PILL_BTN);
-        if (sel) await this.page.click(sel, { timeout: 5000 }).catch(() => {});
-      }
-      await this.page.waitForTimeout(1400);
-
-      const rOk = await clickExact(ratio);
-      const dOk = await clickExact(`${seconds}s`);
-      const qOk = await clickExact('x1');
+      const opened = await openPanel();
+      const rx16 = /^(crop_16_9)?\s*16:9$/, rx916 = /^(crop_9_16)?\s*9:16$/;
+      const rOk = opened && await clickChip(ratio === '16:9' ? rx16 : rx916);
+      const dOk = opened && await clickChip(new RegExp(`^${seconds}\\s*s$`));
+      const qOk = opened && await clickChip(/^x1$/);
+      if (!opened && attempt === 1) await this.saveErrorSnapshot('settings_panel_would_not_open');
       await this.page.keyboard.press('Escape').catch(() => {});
       await this.page.waitForTimeout(700);
 
       pill = await readPill();
-      console.log(`[UI Settings] attempt ${attempt}/3: ratio=${rOk ? 'ok' : 'MISS'} ${seconds}s=${dOk ? 'ok' : 'MISS'} x1=${qOk ? 'ok' : 'MISS'} -> pill "${pill}"`);
+      console.log(`[UI Settings] attempt ${attempt}/3: panel=${opened ? 'open' : 'CLOSED'} ratio=${rOk ? 'ok' : 'MISS'} ${seconds}s=${dOk ? 'ok' : 'MISS'} x1=${qOk ? 'ok' : 'MISS'} -> pill "${pill}"`);
       if (wanted(pill)) return pill;
     }
     return pill;
