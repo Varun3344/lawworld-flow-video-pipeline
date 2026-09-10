@@ -1255,7 +1255,17 @@ export class FlowAutomation {
     const chipsBefore = await this.chipCount();
 
     // 1. Upload the frame into the project media via the top-right "Add media menu" -> "Upload" (native file dialog)
-    const menuSel = await this.findFirstSelector(CONFIG.SELECTORS.ADD_MEDIA_MENU_BTN, 3000);
+    //    The top toolbar is not rendered while the Agent side panel is open, so close it first and retry —
+    //    otherwise this fails and the scene is skipped purely because the toolbar was hidden.
+    let menuSel: string | null = null;
+    for (let attempt = 1; attempt <= 3 && !menuSel; attempt++) {
+      await this.closeAgentPanel();
+      menuSel = await this.findFirstSelector(CONFIG.SELECTORS.ADD_MEDIA_MENU_BTN, 3000);
+      if (!menuSel && attempt < 3) {
+        console.log(`[Continuity] toolbar not visible (attempt ${attempt}/3); retrying...`);
+        await this.page.waitForTimeout(1500);
+      }
+    }
     if (!menuSel) {
       console.warn(`[Continuity] "Add media menu" button not found.`);
       return false;

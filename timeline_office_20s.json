@@ -1,0 +1,15 @@
+{
+  "_comment": "20s, seated office look, no on-screen captions. Presenter carries more of the runtime since the room itself is now doing visual work.",
+  "root": "./downloads/LawWorld_Office_Case1",
+  "output": "./downloads/LawWorld_Office_Case1/LawWorld_Office_20s.mp4",
+  "presenter": ["s1_hook.mp4", "s2_divert.mp4"],
+  "segments": [
+    { "from": 0,    "to": 4.0,  "source": "presenter" },
+    { "from": 4.0,  "to": 6.5,  "source": "broll",  "clip": "b1_corridor_broll.mp4" },
+    { "from": 6.5,  "to": 10.0, "source": "presenter" },
+    { "from": 10.0, "to": 12.5, "source": "broll",  "clip": "b2_counter_broll.mp4" },
+    { "from": 12.5, "to": 15.0, "source": "presenter" },
+    { "from": 15.0, "to": 17.5, "source": "broll",  "clip": "b3_affidavit_broll.mp4" },
+    { "from": 17.5, "to": 20.0, "source": "presenter" }
+  ]
+}
