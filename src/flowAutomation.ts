@@ -1276,8 +1276,13 @@ export class FlowAutomation {
     // Menu item renders as "uploadUpload" (icon ligature + label) and sits near the top of the page
     const uploadItem = await this.page.evaluateHandle(() => {
       const els = Array.from(document.querySelectorAll('button, [role="menuitem"]'));
-      return els.find(el => /upload/i.test(el.textContent || '') && (el as HTMLElement).getBoundingClientRect().y < 400
-        && (el as HTMLElement).getBoundingClientRect().width > 0) || null;
+      // Prefer the topmost visible match rather than requiring y < 400: that gate made the lookup fail
+      // whenever the menu rendered lower down, which skipped the scene for no real reason.
+      const hits = els.filter(el => /upload/i.test(el.textContent || '')
+        && (el as HTMLElement).getBoundingClientRect().width > 0
+        && (el as HTMLElement).getBoundingClientRect().height > 0);
+      hits.sort((a, b) => (a as HTMLElement).getBoundingClientRect().y - (b as HTMLElement).getBoundingClientRect().y);
+      return hits[0] || null;
     }).catch(() => null);
     const uploadEl = uploadItem ? uploadItem.asElement() : null;
     if (!uploadEl) {
@@ -1746,9 +1751,11 @@ export class FlowAutomation {
     initialTileCount: number = 0,
     initialTileSrcs: Set<string> = new Set()
   ): Promise<boolean> {
-    console.log(`[Render Watchdog] Monitoring generation for ${scene.sceneId} (Timeout: 4 mins)...`);
-    const startTime = Date.now();
+    // These messages used to say "4 mins" regardless of --timeout, which made a real 8-minute wait look like
+    // the flag had been ignored. Report the value actually in force.
     const maxTimeout = this.options.maxRenderTimeoutMs || CONFIG.RENDER_TIMEOUT_MS;
+    console.log(`[Render Watchdog] Monitoring generation for ${scene.sceneId} (Timeout: ${Math.round(maxTimeout / 60000)} min)...`);
+    const startTime = Date.now();
     let nudgeLogged = false;
 
     // Stale "Failed" cards from earlier attempts stay in the gallery; only a NEW one means this scene was blocked
@@ -1839,7 +1846,7 @@ export class FlowAutomation {
       await this.page.waitForTimeout(3000);
     }
 
-    console.error(`[Timeout] Scene ${scene.sceneId} exceeded max render time of 4 minutes.`);
+    console.error(`[Timeout] Scene ${scene.sceneId} exceeded max render time of ${Math.round(maxTimeout / 60000)} minute(s).`);
     await this.saveErrorSnapshot(`timeout_${scene.sceneId}`);
     return false;
   }

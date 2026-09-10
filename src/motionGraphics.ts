@@ -33,6 +33,53 @@ const sh = (cmd: string) => {
 const esc = (t: string) => t.replace(/\\/g, '').replace(/:/g, '\\:').replace(/'/g, '').replace(/,/g, '\\,');
 
 /** Backdrop: near-black with a faint grid and a warm pool of light behind the panels. */
+
+/**
+ * When does he actually say a given word?
+ *
+ * Panels used to reveal on a fixed beat, which cannot match a person speaking at their own pace — that
+ * mismatch was the single most visible flaw in the cards. Timing is now taken from the narration itself:
+ * speech is split on silence, the dialogue's words are distributed across those spans by length, and each
+ * panel is told the moment its own word is spoken.
+ */
+function wordTimes(clip: string, dialogue: string): { word: string; at: number }[] {
+  const total = parseFloat(execSync(`ffprobe -v error -show_entries format=duration -of csv=p=0 "${clip}"`)
+    .toString().trim()) || 10;
+  const o = execSync(`ffmpeg -hide_banner -i "${clip}" -af silencedetect=noise=-35dB:d=0.22 -f null - 2>&1`,
+    { stdio: 'pipe' }).toString();
+  const starts = [...o.matchAll(/silence_start: ([\d.]+)/g)].map(m => parseFloat(m[1]));
+  const ends = [...o.matchAll(/silence_end: ([\d.]+)/g)].map(m => parseFloat(m[1]));
+  const segs: [number, number][] = [];
+  let cur = 0;
+  starts.forEach((st, i) => { if (st - cur > 0.12) segs.push([cur, st]); cur = ends[i] ?? total; });
+  if (total - cur > 0.12) segs.push([cur, total]);
+  const spans = segs.length ? segs : [[0.2, total - 0.2] as [number, number]];
+
+  const words = dialogue.replace(/\s+/g, ' ').trim().split(' ');
+  const span = spans.reduce((a, [x, y]) => a + (y - x), 0);
+  const out: { word: string; at: number }[] = [];
+  let wi = 0;
+  spans.forEach(([x, y], si) => {
+    let take = si === spans.length - 1 ? words.length - wi : Math.round(words.length * ((y - x) / span));
+    take = Math.max(0, Math.min(take, words.length - wi));
+    const mine = words.slice(wi, wi + take); wi += take;
+    const chars = mine.reduce((a, w) => a + w.length, 0) || 1;
+    let t = x;
+    mine.forEach(w => {
+      out.push({ word: w.toLowerCase().replace(/[^a-z]/g, ''), at: t });
+      t += (y - x) * (w.length / chars);
+    });
+  });
+  return out;
+}
+
+/** First moment `needle` is spoken in the clip, or null if it is never said. */
+function timeOf(times: { word: string; at: number }[], needle: string): number | null {
+  const n = needle.toLowerCase().replace(/[^a-z]/g, '');
+  const hit = times.find(t => t.word === n || (n.length > 4 && t.word.startsWith(n.slice(0, 5))));
+  return hit ? hit.at : null;
+}
+
 function backdrop(): string {
   const f = path.join(TMP, 'grid.png');
   if (!fs.existsSync(f))
@@ -106,7 +153,12 @@ function flyIn(idx: number, base: string, x: number, y: number, at: number, from
   };
 }
 
-interface Card { id: string; seconds: number; title: string; panels: { label: string; sub: string; accent?: boolean }[]; }
+interface Card {
+  id: string; seconds: number; title: string;
+  panels: { label: string; sub: string; accent?: boolean; syncWord?: string }[];
+  /** Narration this card plays under; when given, panels land on their own words. */
+  syncClip?: string; syncDialogue?: string; syncOffset?: number;
+}
 
 function render(card: Card): string {
   const grid = backdrop(), pulse = pulseSprite(), sweep = sweepSprite();
@@ -115,10 +167,31 @@ function render(card: Card): string {
   const pw = 1090, ph = n > 3 ? 132 : 186, gap = n > 3 ? 30 : 46;
   const top = Math.round((H - (n * ph + (n - 1) * gap)) / 2) + 40;
   const step = ph + gap;
-  const beat = 0.42, first = 0.35;                       // when each panel lands
+  // Panel beats: taken from the narration when the card declares one, otherwise an even fallback rhythm.
+  const beat = 0.42, first = 0.35;
+  let atFor: (i: number) => number = i => first + i * beat;
+  if (card.syncClip && card.syncDialogue && !fs.existsSync(card.syncClip))
+    console.warn(`[Motion] ${card.id}: narration clip missing (${card.syncClip}) — panels will use the even `
+      + `fallback beat and will NOT match the speech.`);
+  if (card.syncClip && card.syncDialogue && fs.existsSync(card.syncClip)) {
+    const times = wordTimes(card.syncClip, card.syncDialogue);
+    const off = card.syncOffset ?? 0;
+    const resolved = card.panels.map((p, i) => {
+      const t = p.syncWord ? timeOf(times, p.syncWord) : null;
+      return t === null ? null : Math.max(0.15, t - off - 0.15);
+    });
+    if (resolved.every(v => v !== null)) {
+      atFor = i => resolved[i] as number;
+      console.log(`[Motion] ${card.id}: panels synced to speech at ${resolved.map(v => (v as number).toFixed(1)).join('s, ')}s`);
+    } else {
+      const missing = card.panels.filter((p, i) => resolved[i] === null).map(p => p.syncWord).join(', ');
+      console.warn(`[Motion] ${card.id}: word(s) not found in the narration (${missing}); using the even fallback`);
+    }
+  }
   const lineX = 104, lineTop = top + 30;
   const lineMax = (n - 1) * step + ph / 2;               // stops at the last panel's middle
-  const travel = `clip((t-${first})*${(lineMax / (beat * n)).toFixed(1)},0,${lineMax})`;
+  const lastAt = atFor(n - 1);
+  const travel = `clip((t-${atFor(0).toFixed(2)})*${(lineMax / Math.max(0.5, lastAt - atFor(0) + 0.4)).toFixed(1)},0,${lineMax})`;
 
   const sprites = card.panels.map((p, i) =>
     panel(`${card.id}_${i}`, pw, ph, p.label, p.sub, p.accent === true, i));
@@ -131,13 +204,13 @@ function render(card: Card): string {
     + `,drawbox=x=${lineX}:y=${lineTop}:w=4:h='${travel}':color=${AMBER}@0.45:t=fill[bg];`;
   let base = 'bg';
   sprites.forEach((_, i) => {
-    const f = flyIn(i + 1, base, 140, top + i * step, first + i * beat, -300);
+    const f = flyIn(i + 1, base, 140, top + i * step, atFor(i), -300);
     g += f.g + ';';
     base = f.label;
   });
   // pulse rides the spine while it grows, then fades out at the bottom
   g += `[${n + 1}:v]format=rgba[pl];[${base}][pl]overlay=x=${lineX - 21}:y='${lineTop}+${travel}-23'`
-     + `:enable='between(t,${first},${(first + beat * n + 0.5).toFixed(2)})':format=auto[wp];`;
+     + `:enable='between(t,${atFor(0).toFixed(2)},${(lastAt + 0.6).toFixed(2)})':format=auto[wp];`;
   // and a slow sheen keeps the frame alive once everything has landed
   g += `[${n + 2}:v]format=rgba[sw];[wp][sw]overlay=x='-700+mod(t*430,${W + 900})':y=0:format=auto,`
      + `format=yuv420p[v]`;
@@ -152,21 +225,33 @@ function render(card: Card): string {
   return out;
 }
 
+const CLIPS = './downloads/LawWorld_OfficeDark_Case1';
+const D1 = "A man in Bengaluru complained about a civic amenity site allotment. He went to the police, to the Lokayukta, even to the Governor. Nobody acted.";
+const D2 = "So he filed a private complaint before a Magistrate. But the trial court found an unverified affidavit, and diverted the case into a Section two twenty three enquiry.";
+const D3 = "The ruling went the other way. An unverified affidavit is a curable defect, not a fatal one. It cannot end a complaint before that complaint has even begun.";
+
+// Each card only lists words spoken inside the clip it plays under — a panel whose word is never said
+// cannot be synced, and would silently fall back to the fixed beat that caused the original mismatch.
+// syncOffset is where the card starts inside that clip, so panel times are relative to the card.
 const CARDS: Card[] = [
-  { id: 'mg_chain', seconds: 6, title: 'WHERE HE WENT FIRST',
+  { id: 'mg_chain', seconds: 5.5, title: 'WHERE HE WENT FIRST',
+    syncClip: `${CLIPS}/s1_hook.mp4`, syncDialogue: D1, syncOffset: 3.0,
     panels: [
-      { label: 'THE POLICE', sub: 'No action' },
-      { label: 'THE LOKAYUKTA', sub: 'No action' },
-      { label: 'THE GOVERNOR', sub: 'No action' },
-      { label: 'THE MAGISTRATE', sub: 'Private complaint filed', accent: true }] },
-  { id: 'mg_sections', seconds: 5, title: 'WHAT THE TRIAL COURT DID',
+      { label: 'THE POLICE',    sub: 'No action', syncWord: 'police' },
+      { label: 'THE LOKAYUKTA', sub: 'No action', syncWord: 'lokayukta' },
+      { label: 'THE GOVERNOR',  sub: 'No action', syncWord: 'governor', accent: true }] },
+
+  { id: 'mg_sections', seconds: 4.0, title: 'WHAT THE TRIAL COURT DID',
+    syncClip: `${CLIPS}/s2_divert.mp4`, syncDialogue: D2, syncOffset: 3.0,
     panels: [
-      { label: 'SECTION 175', sub: 'Investigation ordered' },
-      { label: 'SECTION 223', sub: 'Diverted to enquiry instead', accent: true }] },
-  { id: 'mg_verdict', seconds: 5, title: 'THE HIGH COURT HELD',
+      { label: 'UNVERIFIED AFFIDAVIT', sub: 'Spotted by the trial court', syncWord: 'affidavit' },
+      { label: 'DIVERTED TO ENQUIRY',  sub: 'Section 223 instead of 175', syncWord: 'diverted', accent: true }] },
+
+  { id: 'mg_verdict', seconds: 4.5, title: 'THE HIGH COURT HELD',
+    syncClip: `${CLIPS}/s3_ruling.mp4`, syncDialogue: D3, syncOffset: 3.0,
     panels: [
-      { label: 'A CURABLE DEFECT', sub: 'The complaint survives', accent: true },
-      { label: 'NOT A FATAL ONE', sub: 'It cannot end the case' }] },
+      { label: 'A CURABLE DEFECT', sub: 'The complaint survives', syncWord: 'curable', accent: true },
+      { label: 'NOT A FATAL ONE',  sub: 'It cannot end the case',  syncWord: 'fatal' }] },
 ];
 
 fs.mkdirSync(OUT, { recursive: true });
