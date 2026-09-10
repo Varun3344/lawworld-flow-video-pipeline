@@ -784,11 +784,17 @@ export class FlowAutomation {
    * selecting "Veo 3.1 - Quality" was observed silently putting the duration back to 4s, which would have
    * produced 4-second clips against 10 seconds of dialogue.
    */
-  /** True when the settings popup is already showing (its model selector is on screen). */
+  /**
+   * True when the settings popup is actually showing. Detected via the duration chips ("4s", "8s"...), which
+   * render only inside the popup. The model-family button is NOT a valid signal: it stays in the DOM while
+   * the popup is shut, so testing for it made openSettingsPill() skip its click and leave the popup closed.
+   */
   private async settingsPopupOpen(): Promise<boolean> {
-    return this.page.evaluate(() => Array.from(document.querySelectorAll('button, [role="button"], [role="combobox"]'))
-      .some(b => (b.getAttribute('aria-label') || '') === 'Select model family'
-        && (b as HTMLElement).getBoundingClientRect().width > 0)).catch(() => false);
+    return this.page.evaluate(() => Array.from(document.querySelectorAll('button, [role="option"], [role="radio"], li'))
+      .some(b => {
+        const r = (b as HTMLElement).getBoundingClientRect();
+        return r.width > 0 && r.width < 220 && /^\d+\s*s$/.test((b.textContent || '').trim());
+      })).catch(() => false);
   }
 
   /** Idempotent: the pill is a toggle, so clicking it while the popup is open would close it again. */
@@ -905,13 +911,20 @@ export class FlowAutomation {
         console.warn(`[UI Settings] ${wantSec}s NOT offered by this model. Durations available: ${offered || '(none found)'}`);
       }
 
-      // 4. Click x1 quantity option in settings popup (forces single output video, preventing x2 duplicates)
-      const quantityBtn = await this.findFirstSelector(CONFIG.SELECTORS.QUANTITY_X1_BTN);
-      if (quantityBtn) {
-        await this.page.click(quantityBtn);
-        await this.page.waitForTimeout(500);
-        console.log(`[UI Settings] Selected x1 single video output (avoiding x2 duplicates).`);
-      }
+      // 4. Click the x1 quantity chip. Matching on :has-text("x1") hit the settings pill itself — its label
+      //    reads "Video · 720p · 8s crop_16_9 x1" — which toggled the popup shut and reported a false success.
+      const qtyPicked = await this.page.evaluate(() => {
+        const el = Array.from(document.querySelectorAll('button, [role="option"], [role="radio"], li'))
+          .find(e => {
+            const r = (e as HTMLElement).getBoundingClientRect();
+            return r.width > 0 && r.width < 160 && (e.textContent || '').trim() === 'x1';
+          });
+        if (!el) return false;
+        (el as HTMLElement).click();
+        return true;
+      }).catch(() => false);
+      await this.page.waitForTimeout(500);
+      console.log(`[UI Settings] Quantity x1: ${qtyPicked ? 'SELECTED' : 'chip not found'}`);
 
       // 5. Dismiss settings overlay popup panel so it does not block pointer events
       await this.page.keyboard.press('Escape').catch(() => {});
