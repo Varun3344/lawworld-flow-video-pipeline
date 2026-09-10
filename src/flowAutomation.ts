@@ -426,14 +426,14 @@ export class FlowAutomation {
       await this.ensureAgentOff();
       await this.selectModelFamily((this.config as any).model || '');
       await this.selectResolution((this.config as any).resolution || '');
-      await this.selectAspectRatioUI(brollAspect);
-      const pillText = await this.page.evaluate(() => { const b = Array.from(document.querySelectorAll('button')).find(x => /Video\s*·/.test(x.textContent || '')); return b ? (b.textContent || '').trim().replace(/\s+/g, ' ') : ''; }).catch(() => '');
+      const pillText = await this.applyGenerationSettings(brollAspect, this.config.clipDurationSeconds || 10);
       const wantWide = brollAspect === '16:9';
       const aspectOk = wantWide ? /16:9|crop_16_9/.test(pillText) : /9:16|crop_9_16/.test(pillText);
       console.log(`[B-roll] Pill now reads: ${pillText}`);
       const wantSecB = this.config.clipDurationSeconds || 10;
       if (!new RegExp(`(^|[^\\d])${wantSecB}\\s?s`).test(pillText) || !/x1/.test(pillText) || !aspectOk) {
         console.error(`[B-roll] ${scene.sceneId}: settings pill reads "${pillText}" (need ${wantSecB}s / ${brollAspect} / x1) — refusing to submit.`);
+        await this.openSettingsPill();
         await this.saveErrorSnapshot(`broll_settings_wrong_${scene.sceneId}`);
         continue;
       }
@@ -872,18 +872,75 @@ export class FlowAutomation {
     return clicked;
   }
 
+  /**
+   * Applies aspect / duration / quantity in one disciplined pass and returns what the pill actually reads.
+   *
+   * Every option here must be clicked through Playwright. Synthetic element.click() calls inside
+   * page.evaluate() dispatch untrusted events that this Angular Material panel ignores, so they appear to
+   * succeed while changing nothing — that alone accounted for several "settings not applied" failures.
+   *
+   * The panel is a toggle with no reliable "is it open" signal, so each attempt closes it first, reopens it,
+   * applies everything, then verifies against the pill. Up to three attempts, since the panel is flaky.
+   */
+  private async applyGenerationSettings(ratio: string, seconds: number): Promise<string> {
+    const readPill = async (): Promise<string> => this.page.evaluate(() => {
+      const b = Array.from(document.querySelectorAll('button')).find(x => /Video\s*·/.test(x.textContent || ''));
+      return b ? (b.textContent || '').trim().replace(/\s+/g, ' ') : '';
+    }).catch(() => '');
+
+    const clickExact = async (label: string): Promise<boolean> => {
+      const loc = this.page.locator(
+        `button:text-is("${label}"), [role="radio"]:text-is("${label}"), [role="option"]:text-is("${label}"), li:text-is("${label}")`
+      ).first();
+      if (!(await loc.count().catch(() => 0))) return false;
+      await loc.click({ timeout: 4000 }).catch(() => {});
+      await this.page.waitForTimeout(450);
+      return true;
+    };
+
+    const wanted = (p: string) =>
+      new RegExp(`(^|[^\\d])${seconds}\\s?s`).test(p) && /x1/.test(p)
+      && (ratio === '16:9' ? /16:9|crop_16_9/.test(p) : !/16:9|crop_16_9/.test(p));
+
+    let pill = '';
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      await this.page.keyboard.press('Escape').catch(() => {});
+      await this.page.waitForTimeout(600);
+      const trigger = this.page.locator('button[aria-label="Settings trigger"]').first();
+      if (await trigger.count().catch(() => 0)) await trigger.click({ timeout: 5000 }).catch(() => {});
+      else {
+        const sel = await this.findFirstSelector(CONFIG.SELECTORS.SETTINGS_PILL_BTN);
+        if (sel) await this.page.click(sel, { timeout: 5000 }).catch(() => {});
+      }
+      await this.page.waitForTimeout(1400);
+
+      const rOk = await clickExact(ratio);
+      const dOk = await clickExact(`${seconds}s`);
+      const qOk = await clickExact('x1');
+      await this.page.keyboard.press('Escape').catch(() => {});
+      await this.page.waitForTimeout(700);
+
+      pill = await readPill();
+      console.log(`[UI Settings] attempt ${attempt}/3: ratio=${rOk ? 'ok' : 'MISS'} ${seconds}s=${dOk ? 'ok' : 'MISS'} x1=${qOk ? 'ok' : 'MISS'} -> pill "${pill}"`);
+      if (wanted(pill)) return pill;
+    }
+    return pill;
+  }
+
   private async selectAspectRatioUI(ratio: string): Promise<void> {
     console.log(`[UI Settings] Setting aspect ratio to: ${ratio}...`);
 
     // 0. Layout B: settings behind the "tune" button
     if (await this.applySettingsPanel(ratio)) return;
 
-    // 1. Ensure the settings popup is OPEN. This used to click the pill unconditionally, but the pill is a
-    //    toggle: after selectModelFamily() the popup could still be open, so the click closed it and every
-    //    lookup below then silently missed — the aspect and duration were never applied.
-    const pillOpen = await this.openSettingsPill();
-    if (pillOpen) {
-      await this.page.waitForTimeout(1000);
+    // 1. Click the settings pill. selectModelFamily() leaves the panel closed (it presses Escape), so a plain
+    //    click is correct here — this is the sequence that has always worked. Routing it through
+    //    openSettingsPill()'s "is it already open?" probe was a regression: when that probe misreported, the
+    //    whole block was skipped and nothing was applied.
+    const settingsPill = await this.findFirstSelector(CONFIG.SELECTORS.SETTINGS_PILL_BTN);
+    if (settingsPill) {
+      await this.page.click(settingsPill);
+      await this.page.waitForTimeout(1200);
 
       // 2. Click the requested aspect option in the settings popup (9:16 for avatar scenes, 16:9 for B-roll)
       const ratioSelectors = ratio === '16:9' ? CONFIG.SELECTORS.ASPECT_RATIO_16_9_BTN : CONFIG.SELECTORS.ASPECT_RATIO_BTN;
@@ -1554,11 +1611,8 @@ export class FlowAutomation {
     await this.ensureAgentOff();
     await this.selectModelFamily((this.config as any).model || '');
     await this.selectResolution((this.config as any).resolution || '');
-    await this.selectAspectRatioUI(this.config.aspectRatio || '9:16');
-    const pillText = await this.page.evaluate(() => {
-      const b = Array.from(document.querySelectorAll('button')).find(x => /Video\s*·/.test((x.textContent || '')));
-      return b ? (b.textContent || '').trim().replace(/\s+/g, ' ') : '(pill not found)';
-    }).catch(() => '(error)');
+    const pillText = await this.applyGenerationSettings(
+      this.config.aspectRatio || '9:16', this.config.clipDurationSeconds || 10);
     console.log(`[UI Settings] Pill now reads: ${pillText}`);
     // This guard used to reject 16:9 outright, which made a configured 16:9 avatar run impossible even
     // though the UI had selected it correctly. Check against the configured ratio, like the B-roll path does.
