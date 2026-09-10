@@ -1,0 +1,70 @@
+{
+  "projectTitle": "LawWorld_AI_Verification_Ruling",
+  "aspectRatio": "9:16",
+  "model": "Omni 1.1 Flash",
+  "clipDurationSeconds": 10,
+  "maxWordsPerClip": 20,
+  "speedMultiplier": 1.05,
+  "downloadFolder": "./downloads/LawWorld_AI_Verification_Ruling",
+  "globalStyle": {
+    "avatar": "@me",
+    "hostName": "Ashok",
+    "channelName": "LawWorld",
+    "voice": "Professional clear male voiceover",
+    "useAccountAvatar": true,
+    "outfit": "Crisp white shirt and black blazer",
+    "background": "Solid plain grey studio background with soft warm studio lighting",
+    "gestures": "expressive natural hand gestures",
+    "audio": "Professional clear male voiceover ONLY (same voice pitch, tone, and accent across all clips, NO background music)",
+    "negativePrompts": "NO golden scales of justice, NO background logos, NO text in background, NO wall text, NO background props, NO floating text, NO name tags, NO abstract network lines, NO floating books"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene_01_intro",
+      "isIntro": true,
+      "dialogue": "Hi, I am Ashok from LawWorld. Welcome! Today we explore how artificial intelligence is transforming legal research.",
+      "visual3D": "Professional presenter smiling and speaking directly to camera against a solid plain grey studio background"
+    },
+    {
+      "sceneId": "scene_02",
+      "dialogue": "AI provides speed previously unimaginable. But speed without absolute accuracy is a dangerous legal gamble.",
+      "visual3D": "Professional presenter presenting topic against a solid plain grey studio background"
+    },
+    {
+      "sceneId": "scene_03",
+      "dialogue": "Recently, top courts issued a major warning after an AI tool hallucinated fake legal precedents.",
+      "visual3D": "Professional presenter speaking earnestly against a solid plain grey studio background"
+    },
+    {
+      "sceneId": "scene_04",
+      "dialogue": "The tribunal made a ruling using AI-generated citations that turned out to be completely unverified.",
+      "visual3D": "Professional presenter analyzing legal research integrity against a solid plain grey studio background"
+    },
+    {
+      "sceneId": "scene_05",
+      "dialogue": "Fictional case laws were presented as facts, triggering a strict zero-tolerance policy from judges.",
+      "visual3D": "Professional presenter explaining court policy against a solid plain grey studio background"
+    },
+    {
+      "sceneId": "scene_06",
+      "dialogue": "Judges reversed the decision, declaring efficiency can never replace expert human reasoning and discretion.",
+      "visual3D": "Professional presenter detailing judicial decision against a solid plain grey studio background"
+    },
+    {
+      "sceneId": "scene_07",
+      "dialogue": "Legal standards remain non-negotiable. Integrity and professional diligence must always take absolute priority.",
+      "visual3D": "Professional presenter emphasizing legal standards against a solid plain grey studio background"
+    },
+    {
+      "sceneId": "scene_08",
+      "dialogue": "The Bar Council was directed to issue strict guidelines for lawyers using digital AI assistants.",
+      "visual3D": "Professional presenter discussing legal guidelines against a solid plain grey studio background"
+    },
+    {
+      "sceneId": "scene_09_outro",
+      "isOutro": true,
+      "dialogue": "Technology empowers, but human discretion ensures justice. Hi, I am Ashok from LawWorld. Stay informed!",
+      "visual3D": "Professional presenter concluding presentation warmly against a solid plain grey studio background"
+    }
+  ]
+}

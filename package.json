@@ -1,0 +1,37 @@
+{
+  "name": "google-flow-ai-video-automation",
+  "version": "1.0.0",
+  "description": "Automated multi-scene AI video generation suite for Google Flow using Playwright and TypeScript",
+  "main": "src/index.ts",
+  "type": "commonjs",
+  "scripts": {
+    "login": "tsx src/login.ts",
+    "generate": "tsx src/index.ts",
+    "dry-run": "tsx src/index.ts --dry-run",
+    "inspect": "tsx src/inspect.ts",
+    "build": "tsc",
+    "test:sanitizer": "tsx src/sanitizer.ts",
+    "merge": "tsx src/index.ts --merge-only"
+  },
+  "keywords": [
+    "google-flow",
+    "playwright",
+    "automation",
+    "ai-video",
+    "veo",
+    "storyboard"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.46.0",
+    "playwright-chromium": "^1.46.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "projectTitle": "LawWorld_SC_CBI_Enquiry_Threshold",
+  "aspectRatio": "9:16",
+  "model": "Omni 1.1 Flash",
+  "clipDurationSeconds": 10,
+  "maxWordsPerClip": 25,
+  "speedMultiplier": 1.1,
+  "downloadFolder": "./downloads/LawWorld_SC_CBI_Enquiry_Threshold",
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravi",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "solid plain seamless mid-grey studio background, soft even lighting; subtle semi-transparent 3D motion graphics float ONLY behind the avatar's shoulders and in the empty space to the left and right, always at the same two positions and size in every scene",
+    "gestures": "Standing still in the same spot, natural calm hand gestures kept below chest level",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; NO visual ever overlaps or covers the face, hands or body; NO text on screen, NO captions, NO name tags, NO logos, NO words inside the visuals, NO scales of justice, NO outfit change, NO camera cut",
+    "camera": "Locked static tripod camera, medium close-up framed from chest up, avatar centered in frame at the same size in every scene, eye level, 50mm lens look, no zoom, no pan, no camera movement",
+    "realism": "Photorealistic live-action footage of a real human presenter recorded in one studio session, natural skin texture, natural eye contact and accurate lip sync, soft even key light from the front, identical exposure and white balance in every scene"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene_01_intro",
+      "isIntro": true,
+      "dialogue": "Hi, I am Ravi from LawWorld. Can a court order a CBI enquiry because it has a doubt? The apex court said no. Here's why.",
+      "visual3D": "Ravi speaking to the viewer with a warm smile, same pose and framing as every other clip. Left anchor: a translucent 3D question mark slowly rotating. Right anchor: a 3D magnifying glass hovering over a glowing document icon. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    },
+    {
+      "sceneId": "scene_02",
+      "dialogue": "Some contract workers challenged recruitment for posts in a state legislature secretariat. They alleged the selection was unfair and collusive, and asked to be regularised.",
+      "visual3D": "Ravi explaining calmly. Left anchor: a 3D notice-board with a pinned recruitment poster icon. Right anchor: a row of small 3D office desk and chair icons assembling one by one. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    },
+    {
+      "sceneId": "scene_03",
+      "dialogue": "The single judge did not cancel the selection. Instead, it directed that future recruitment go through the state's statutory selection commission, not a private agency.",
+      "visual3D": "Ravi explaining the first order. Left anchor: a small private-office cube. Right anchor: a large official commission building; an animated arrow travels from the cube to the building behind the shoulders. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    },
+    {
+      "sceneId": "scene_04",
+      "dialogue": "The workers appealed. The division bench went further. On its own, it ordered a CBI preliminary enquiry and registered a suo motu public interest case.",
+      "visual3D": "Ravi describing the appeal. Left anchor: a 3D staircase of three court-podium tiers rising upward. Right anchor: a 3D detective badge with a magnifying glass spinning slowly. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    },
+    {
+      "sceneId": "scene_05",
+      "dialogue": "Here is the twist. Nobody had asked for a CBI enquiry, not the workers, not the state. The bench acted purely on its own doubt.",
+      "visual3D": "Ravi emphasising the twist with a knowing expression. Left and right anchors: empty translucent 3D speech bubbles; a large soft 3D question mark glows behind the head. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    },
+    {
+      "sceneId": "scene_06",
+      "dialogue": "The apex court reminded everyone: ordering a CBI enquiry is an extraordinary power. It must be used sparingly, cautiously, and only in truly exceptional situations.",
+      "visual3D": "Ravi speaking with authority. Left anchor: a 3D shield with a rotating lock. Right anchor: a 3D gauge with its needle resting in the small 'rare use' zone. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    },
+    {
+      "sceneId": "scene_07",
+      "dialogue": "When is it justified? Only when material shows a prima facie offence, systemic failure, powerful officials involved, or local police who cannot probe fairly.",
+      "visual3D": "Ravi listing the legal test. Four 3D checklist tiles appear one by one, two stacked at the left anchor and two at the right anchor, each lighting up with a tick mark. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    },
+    {
+      "sceneId": "scene_08",
+      "dialogue": "Here, the bench relied on vague doubts it never spelled out. That threshold was not met, so the apex court set aside the CBI direction.",
+      "visual3D": "Ravi delivering the conclusion firmly. Left anchor: a 3D document with a red cross stamp coming down. Right anchor: a 3D threshold bar showing a level that fails to reach the line. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    },
+    {
+      "sceneId": "scene_09_outro",
+      "isOutro": true,
+      "dialogue": "Lesson: a CBI probe is a last resort, not a reflex. Courts need concrete material, not suspicion. Follow LawWorld for judgments that shape your practice.",
+      "visual3D": "Ravi concluding warmly with a confident nod. Left anchor: a 3D emergency lever inside a glass case marked by a red icon only. Right anchor: a 3D rotating check mark and a subtle follow-arrow icon. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body."
+    }
+  ],
+  "useLastFrameReference": true,
+  "transition": {
+    "type": "crossfade",
+    "durationSeconds": 0.25
+  }
+}

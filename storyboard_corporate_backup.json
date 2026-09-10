@@ -1,0 +1,94 @@
+{
+  "projectTitle": "LawWorld_Corporate_Criminal_Liability",
+  "aspectRatio": "9:16",
+  "model": "Omni 1.1 Flash",
+  "clipDurationSeconds": 10,
+  "maxWordsPerClip": 33,
+  "speedMultiplier": 1.1,
+  "downloadFolder": "./downloads/LawWorld_Corporate_Criminal_Liability",
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravi",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "solid plain seamless mid-grey studio background, soft even lighting; subtle semi-transparent 3D motion graphics float ONLY behind the avatar's shoulders and in the empty space to the left and right, always at the same two positions and size in every scene",
+    "gestures": "Standing still in the same spot, natural calm hand gestures kept below chest level",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; NO visual ever overlaps or covers the face, hands or body; NO text on screen, NO captions, NO name tags, NO logos, NO words inside the visuals, NO scales of justice, NO outfit change, NO camera cut, NO tripod, NO camera or microphone or any studio equipment visible in frame, nothing in front of the avatar",
+    "camera": "Locked-off static shot, medium close-up framed from chest up, avatar centered in frame at the same size in every scene, eye level, 50mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter recorded in one studio session, natural skin texture, natural eye contact and accurate lip sync, soft even key light from the front, identical exposure and white balance in every scene",
+    "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene_01_intro",
+      "isIntro": true,
+      "dialogue": "Hi, I am Ravi from LawWorld. Can a company escape a criminal case just because no director or officer is named as an accused? The apex court has drawn a clear line.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a sleek 3D glass office tower. Right anchor: a large 3D question mark rotating gently. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A stylised office tower made of simple blue blocks; a giant orange question mark bounces onto its roof while a small faceless character in a suit shrugs at the entrance."
+    },
+    {
+      "sceneId": "scene_02",
+      "dialogue": "Picture this: a company faces prosecution, but the charge sheet names no individual. The company argues the case must be quashed, because a company cannot form criminal intent on its own.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D document with blank, unfilled signature lines. Right anchor: a 3D office building wrapped in a translucent protective shield. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A cartoon company building hides behind a big translucent purple shield; a document with empty lines floats past and a small character points at the blank name line."
+    },
+    {
+      "sceneId": "scene_03",
+      "dialogue": "The apex court disagreed, and laid down a three-stage test. It explains exactly how a human being's intent becomes the intent of the company itself. Let me walk you through it.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D staircase of three glowing steps rising upward. Right anchor: a 3D courthouse facade with tall pillars. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A simple illustrated courthouse with three orange steps rising in front of it; a small character climbs each step as it lights up, one, two, three."
+    },
+    {
+      "sceneId": "scene_04",
+      "dialogue": "Stage one: identify the directing mind. Who actually controls the company in that matter? The person with authority to decide and act on the company's behalf is its directing mind and will.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D executive chair with a glowing ring of light hovering above it. Right anchor: a 3D office building with one window lit brightly. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "An org chart of faceless character icons; a spotlight beam sweeps across them and stops on the one at the top, who gets a glowing crown outline."
+    },
+    {
+      "sceneId": "scene_05",
+      "dialogue": "Stage two: the nexus of act and authority. The prosecution must show that this directing mind acted within their role or delegated powers, and in connection with the company's business.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D chain link joining a small figure icon to a building icon. Right anchor: a 3D wax seal stamping down onto a folder. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A chain of bold links snaps together between a small character and a company building; a big stamp comes down on a folder with a satisfying bounce."
+    },
+    {
+      "sceneId": "scene_06",
+      "dialogue": "Stage three: attribution. Once the directing mind is identified and the act is tied to their authority, their criminal intent is attributed to the company. The company is deemed to have intended it.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D stream of light flowing from a figure icon into a building. Right anchor: a 3D office building glowing from within. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A thought-bubble icon lifts out of a small character's head and floats into a company building, which fills up with orange light from bottom to top."
+    },
+    {
+      "sceneId": "scene_07",
+      "dialogue": "The ruling is clear: a company cannot escape liability merely by shielding the identities of its human agents. The proceedings against the company survive even if no officer is named as accused.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D curtain being drawn aside to reveal an empty stage. Right anchor: a 3D shield with a visible crack running through it. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A theatre curtain slides open to reveal a company building standing alone on a stage; a purple shield in front of it cracks and shatters into pieces."
+    },
+    {
+      "sceneId": "scene_08",
+      "dialogue": "What about punishment? A company is a juristic person, so it cannot be sent to prison. But it can face fines, penalties, and every other consequence that follows a finding of guilt.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D block of barred window bars with a red diagonal strike across it. Right anchor: a 3D stack of gold coins with a red minus sign floating above. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "Cartoon prison bars pop up and get crossed out by a big red X; a stack of coins slides across the screen and shrinks as coins hop away."
+    },
+    {
+      "sceneId": "scene_09_outro",
+      "isOutro": true,
+      "dialogue": "The takeaway: complex structures and collective anonymity no longer shield a company from prosecution. Compliance must run deep inside every organisation. Follow LawWorld to master the evolving law, explained in ninety seconds!",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D checklist board where tick marks light up one by one. Right anchor: a 3D rotating check mark beside a subtle follow-arrow icon. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A tall checklist board fills with green tick marks one by one, then a big orange check mark drops in and bounces, with a small arrow icon sweeping forward."
+    }
+  ],
+  "useLastFrameReference": true,
+  "transition": {
+    "type": "crossfade",
+    "durationSeconds": 0.25
+  },
+  "split": {
+    "avatarCropY": 180,
+    "captionSize": 60,
+    "captionY": 520
+  },
+  "flowProjectUrl": "https://flow.google.com/project/dba75d08-51f8-45f1-adab-dc30b71b26f8",
+  "brollAspect": "16:9"
+}

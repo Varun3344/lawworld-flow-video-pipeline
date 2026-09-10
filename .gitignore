@@ -1,0 +1,36 @@
+# ── Dependencies / build ──────────────────────────────────────────────
+node_modules/
+dist/
+
+# ── Credentials & browser profiles ────────────────────────────────────
+# These hold live Google login sessions. The old rule only matched "user_data/",
+# which left user_data_ashokpalani0504/ and user_data_windows_backup/ exposed.
+user_data*/
+*.env
+.env*
+*credentials*.json
+*token*.json
+cookies*.json
+
+# ── Generated media & logs ────────────────────────────────────────────
+downloads/
+logs/
+style_options/
+layout_previews/
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# ── Run state ─────────────────────────────────────────────────────────
+storyboard_progress.json
+storyboard_failed_prompts.json
+*.bak
+
+# ── OS ────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

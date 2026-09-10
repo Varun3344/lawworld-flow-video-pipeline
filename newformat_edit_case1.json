@@ -1,0 +1,39 @@
+{
+  "_comment": "Reference-style cut: kinetic word-timed captions over a full-frame presenter, clean full-bleed B-roll carrying one big title. Accent is amber (the reference's green is its subject's brand colour); switch 'accent' to 0x9EE84B to match the reference exactly.",
+  "scenes": {
+    "scene_02_j1a": {
+      "mode": "talking",
+      "captions": true,
+      "captionY": 250,
+      "accent": "0xFFC13B",
+      "keywords": [
+        "police",
+        "lokayukta",
+        "governor",
+        "magistrate",
+        "complaint",
+        "complainant"
+      ]
+    },
+    "scene_03_j1b": {
+      "mode": "broll",
+      "scrim": false,
+      "title": "UNVERIFIED AFFIDAVIT",
+      "bubble": false
+    },
+    "scene_04_j1c": {
+      "mode": "talking",
+      "captions": true,
+      "captionY": 250,
+      "accent": "0xFFC13B",
+      "keywords": [
+        "curable",
+        "defect",
+        "fatal",
+        "accountable",
+        "extinguish",
+        "nagaprasanna"
+      ]
+    }
+  }
+}

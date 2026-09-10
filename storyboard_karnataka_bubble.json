@@ -1,0 +1,233 @@
+{
+  "projectTitle": "LawWorld_Karnataka_HC_Bubble",
+  "layout": "landscape",
+  "aspectRatio": "9:16",
+  "brollAspect": "16:9",
+  "brollStyle": "3d",
+  "brollSetting": "Set in an Indian legal and civic context: any people are Indian, in simple modern clothing; architecture and objects are Indian courthouse, government office and small-town styles",
+  "clipDurationSeconds": 10,
+  "maxWordsPerClip": 33,
+  "speedMultiplier": 1.1,
+  "downloadFolder": "./downloads/LawWorld_Karnataka_HC_Bubble",
+  "useLastFrameReference": true,
+  "transition": {
+    "type": "crossfade",
+    "durationSeconds": 0.25
+  },
+  "split": {
+    "captionSizeLandscape": 72,
+    "captionYLandscape": 930,
+    "captionKeywords": [
+      "affidavit",
+      "curable",
+      "investigation",
+      "chance",
+      "shuffle",
+      "precedent",
+      "pardon",
+      "approver",
+      "procedure",
+      "cruelty",
+      "alimony",
+      "crore",
+      "externment",
+      "gazette",
+      "nullity",
+      "statute",
+      "quashed",
+      "bench"
+    ],
+    "bubble": true,
+    "bubbleDiameter": 320,
+    "bubbleBorder": 6,
+    "bubbleBorderColor": "white",
+    "bubbleCropSize": 640,
+    "bubbleCropX": 40,
+    "bubbleCropY": 160,
+    "bubbleMarginX": 60,
+    "bubbleMarginY": 150
+  },
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravishankar",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "solid plain seamless mid-grey studio background with soft even lighting and nothing else in the frame",
+    "gestures": "Standing still in the same spot, natural calm hand gestures kept below chest level",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; NO objects, icons, graphics or props anywhere in the frame; NO text on screen, NO captions, NO name tags, NO logos, NO outfit change, NO camera cut, NO tripod, NO camera or microphone or any studio equipment visible in frame, nothing in front of the avatar",
+    "camera": "Locked-off static shot, medium close-up framed from chest up, avatar centered in frame at the same size in every scene, eye level, 50mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter recorded in one studio session, natural skin texture, natural eye contact and accurate lip sync, soft even key light from the front, identical exposure and white balance in every scene",
+    "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene_01_intro",
+      "isIntro": true,
+      "sanitizeDialogue": false,
+      "dialogue": "Hi, I am Ravishankar from LawWorld. The Karnataka High Court has delivered five important rulings this week. Procedure, gaming, pardon, alimony, and police powers. Here is what each one decides.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A stylised 3D courthouse with tall stone columns; five glowing document cards fan out in a wide arc in front of it, each card carrying a soft golden seal."
+    },
+    {
+      "sceneId": "scene_02_j1a",
+      "sanitizeDialogue": false,
+      "dialogue": "First, a private complaint about a civic amenity site allotment in Bengaluru. The complainant approached the police, the Lokayukta, and the Governor. Getting no response, he finally moved the Magistrate's court.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A stylised 3D city map on a table with one plot of land marked and glowing; a small figure walks up to three official doorways one after another, and each door quietly closes.",
+      "caseNumber": 1,
+      "caseTitle": "Private Complaint Route"
+    },
+    {
+      "sceneId": "scene_03_j1b",
+      "sanitizeDialogue": false,
+      "dialogue": "The trial court spotted an unverified affidavit. So instead of ordering an investigation under Section one seventy five, it diverted the matter into a Section two twenty three enquiry.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A 3D document with an incomplete red stamp lands on a wooden desk; beside it a signpost shows two arrows diverging sharply towards two very different doors."
+    },
+    {
+      "sceneId": "scene_04_j1c",
+      "sanitizeDialogue": false,
+      "dialogue": "Justice Nagaprasanna disagreed. An unverified affidavit is a curable defect, not a fatal one. That safeguard exists to make a complainant accountable. It cannot extinguish a case before it even begins.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A cracked 3D wax seal on a document slowly mends itself and glows warm gold; behind it a heavy iron gate that was swinging shut stops and opens wide again."
+    },
+    {
+      "sceneId": "scene_05_j1d",
+      "sanitizeDialogue": false,
+      "dialogue": "And the two sections are not interchangeable. Where the answers sit in official files far beyond a complainant's reach, only an investigation can reach them. A court enquiry simply cannot.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A tall 3D filing cabinet opens and sealed folders float upward out of the reach of a small figure below; a large magnifying glass sweeps across them and they light up."
+    },
+    {
+      "sceneId": "scene_06_j2a",
+      "sanitizeDialogue": false,
+      "dialogue": "Second, a card game question. After a night raid near Mangaluru, several men were charged under the Karnataka Police Act. Their defence leaned on a nineteen seventy seven ruling calling Andar Bahar skill.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A stylised 3D night scene: a low table strewn with playing cards and coins, torch beams sweeping across a wooden floor, shadows of chairs pushed back in a hurry.",
+      "caseNumber": 2,
+      "caseTitle": "Andar Bahar Reference"
+    },
+    {
+      "sceneId": "scene_07_j2b",
+      "sanitizeDialogue": false,
+      "dialogue": "Justice Suraj Govindaraj examined how the game actually works. One shuffled deck. The winner decided purely by where a single card happens to fall. After that shuffle, no player influences anything.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A 3D deck of cards shuffles in mid air and then lays itself out in one fixed unbroken row; a single card in the row lights up bright gold to mark the result."
+    },
+    {
+      "sceneId": "scene_08_j2c",
+      "sanitizeDialogue": false,
+      "dialogue": "So the outcome rests on the shuffle, not on any skill of the player. That makes it a game of chance, squarely against a precedent followed for nearly fifty years.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A large 3D balance scale: a glowing brain sits on one pan and a pair of tumbling dice on the other; the dice pan drops down decisively and settles."
+    },
+    {
+      "sceneId": "scene_09_j2d",
+      "sanitizeDialogue": false,
+      "dialogue": "Rather than simply overrule that precedent, the judge referred the question upward. The Chief Justice will now constitute a larger bench. Until then the classification in Karnataka stays genuinely unsettled.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A single tall 3D judge's chair on a raised bench multiplies smoothly into a row of several identical chairs; a large glowing question mark hovers above the empty bench."
+    },
+    {
+      "sceneId": "scene_10_j3a",
+      "sanitizeDialogue": false,
+      "dialogue": "Third, a question of trial procedure. In a Bengaluru murder trial, a sessions judge granted a conditional pardon to one accused, turning him into an approver, a witness for the prosecution.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A 3D courtroom interior; a figure steps out of the railed accused enclosure and walks across to the witness stand, where a document with a glowing seal waits.",
+      "caseNumber": 3,
+      "caseTitle": "Approver's Pardon"
+    },
+    {
+      "sceneId": "scene_11_j3b",
+      "sanitizeDialogue": false,
+      "dialogue": "Another accused challenged that order, and an earlier one calling for a probation officer's report. His argument was simple. The pardon was granted without following the procedure the law requires.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "Two 3D paper orders lie side by side on a desk, each stamped with a different date; a bold red arrow sweeps across and strikes through both of them."
+    },
+    {
+      "sceneId": "scene_12_j3c",
+      "sanitizeDialogue": false,
+      "dialogue": "Justice Nagaprasanna found procedural aberrations in how it was all done. Both orders were obliterated. The matter returns to the trial court to decide the pardon application afresh, in accordance with law.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "The two 3D orders on the desk dissolve into fine dust and blow away; a clean empty desk remains, holding one fresh blank page and a fountain pen."
+    },
+    {
+      "sceneId": "scene_13_j3d",
+      "sanitizeDialogue": false,
+      "dialogue": "Note carefully what this does not do. The pardon itself is not refused. Only the manner of granting it was faulted. The trial court must now regulate its own procedure.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A 3D pathway curves in a smooth loop back to its own starting point; at the start a gateway stands clearly open rather than closed, softly lit from above."
+    },
+    {
+      "sceneId": "scene_14_j4a",
+      "sanitizeDialogue": false,
+      "dialogue": "Fourth, a marriage from nineteen ninety nine, three grown children, and a family court that refused a divorce. A Kannada film actor appealed, alleging cruelty and desertion by his wife.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A stylised 3D wedding ring rests on a desk calendar whose pages turn rapidly; the ring separates cleanly into two halves that drift apart across the calendar.",
+      "caseNumber": 4,
+      "caseTitle": "Cruelty And Alimony"
+    },
+    {
+      "sceneId": "scene_15_j4b",
+      "sanitizeDialogue": false,
+      "dialogue": "A Division Bench dissolved that marriage. The wife's repeated public claims that he had several other wives were unproven on the record. That, the Bench held, amounted to mental cruelty.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "Several 3D speech bubbles rise into the air one by one and pop, leaving nothing behind; below them a balance scale slowly tilts under their accumulated weight."
+    },
+    {
+      "sceneId": "scene_16_j4c",
+      "sanitizeDialogue": false,
+      "dialogue": "But the husband was not treated as blameless. Under Section twenty three, his own conduct with another woman counted against him. Someone who does that cannot then complain of desertion.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A tall 3D mirror on a stand reflects a figure back at itself; the figure's outstretched pointing finger slowly turns around until it points at its own owner."
+    },
+    {
+      "sceneId": "scene_17_j4d",
+      "sanitizeDialogue": false,
+      "dialogue": "Neither side disclosed their finances. Weighing the commercial success of his films, the Bench awarded two crore rupees as a one time permanent alimony, bringing finality and ending further litigation.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A large scattered 3D pile of gold coins gathers and compacts into one solid gleaming block; a protective shield of soft light forms around a small group of figures."
+    },
+    {
+      "sceneId": "scene_18_j5a",
+      "sanitizeDialogue": false,
+      "dialogue": "Fifth, and practically the most useful of them all. A resident of Nippani was externed by the Superintendent of Police, Belagavi, acting under a state notification from November twenty twenty five.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A 3D village boundary gate at dusk; a small figure with a bundle is turned away from it, while a large official paper bearing a heavy seal hovers above the gate.",
+      "caseNumber": 5,
+      "caseTitle": "Externment Powers"
+    },
+    {
+      "sceneId": "scene_19_j5b",
+      "sanitizeDialogue": false,
+      "dialogue": "But the Karnataka Police Act gives that power to a Police Commissioner, or by gazette notification to a District or Sub Divisional Magistrate. Never, at any point, to a Superintendent.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A 3D organisation chart of glowing boxes; a bright power symbol travels down the chart, skips over one box entirely, and stops dead against a large red cross."
+    },
+    {
+      "sceneId": "scene_20_j5c",
+      "sanitizeDialogue": false,
+      "dialogue": "Crucially, that notification was missing gazette publication. At the Dharwad Bench, Justice Magadum held it non est, a nullity in law, and therefore set aside the externment order.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A heavy official 3D gazette book lies closed and dust covered on a shelf; nearby a stamped document slowly crumbles from its edges inward until nothing remains."
+    },
+    {
+      "sceneId": "scene_21_j5d",
+      "sanitizeDialogue": false,
+      "dialogue": "The principle is clean. Executive instructions may fill a gap, but never override the parent statute. Every externment order resting on that notification is now wide open to challenge.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "A solid 3D statute book sits firmly on a stone pedestal; small paper instruction notes try to stack on top of it, slide off one by one, and the book stays put."
+    },
+    {
+      "sceneId": "scene_22_outro",
+      "isOutro": true,
+      "sanitizeDialogue": false,
+      "dialogue": "Five rulings, one clear theme. Procedure decides outcomes. Always verify a citation against the certified text before you rely on it. Follow LawWorld for the law, explained simply.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics.",
+      "broll3D": "Five 3D document cards line up in a neat row and each one turns over to reveal a glowing checkmark; a plain banner rises smoothly behind them, catching the light."
+    }
+  ]
+}

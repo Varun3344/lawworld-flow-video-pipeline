@@ -1,0 +1,33 @@
+{
+  "projectTitle": "LawWorld_GreenScreen_Test",
+  "aspectRatio": "9:16",
+  "clipDurationSeconds": 10,
+  "maxWordsPerClip": 33,
+  "downloadFolder": "./downloads/LawWorld_GreenScreen_Test",
+  "useLastFrameReference": false,
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravishankar",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "solid uniform bright chroma-key green screen background (pure saturated green, like a professional green screen studio cyclorama), perfectly evenly lit edge to edge, no gradient, no vignette, no shadows cast on the green, nothing else in the frame",
+    "gestures": "Standing still in the same spot, natural calm hand gestures kept below chest level",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; the background is pure flat green everywhere behind him; NO grey background, NO gradient, NO shadow on the background, NO green light or green tint on his skin, hair, shirt or blazer; NO objects, icons, graphics or props; NO text on screen, NO captions, NO logos, NO tripod, NO camera or studio equipment visible in frame",
+    "camera": "Locked-off static shot, medium close-up framed from chest up, avatar centered in frame at the same size in every scene, eye level, 50mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter filmed in a green screen studio, natural skin texture, natural eye contact and accurate lip sync, soft even key light from the front with a clean separation between the presenter and the green background",
+    "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene_01_intro",
+      "isIntro": true,
+      "sanitizeDialogue": false,
+      "dialogue": "Hi, I am Ravishankar from LawWorld. The Karnataka High Court has delivered five important rulings this week. Procedure, gaming, pardon, alimony, and police powers. Here is what each one decides.",
+      "visual3D": "Ravishankar speaking to camera, chest up, standing in front of a plain green screen, no props."
+    }
+  ],
+  "flowProjectUrl": "https://flow.google.com/project/e4084420-4447-40a5-8c52-17e79461d3e9"
+}

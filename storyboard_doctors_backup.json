@@ -1,0 +1,91 @@
+{
+  "projectTitle": "LawWorld_Doctors_Assault_Political_Shield",
+  "aspectRatio": "9:16",
+  "model": "Omni 1.1 Flash",
+  "clipDurationSeconds": 10,
+  "maxWordsPerClip": 33,
+  "speedMultiplier": 1.1,
+  "downloadFolder": "./downloads/LawWorld_Doctors_Assault_Political_Shield",
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravi",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "solid plain seamless mid-grey studio background, soft even lighting; subtle semi-transparent 3D motion graphics float ONLY behind the avatar's shoulders and in the empty space to the left and right, always at the same two positions and size in every scene",
+    "gestures": "Standing still in the same spot, natural calm hand gestures kept below chest level",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; NO visual ever overlaps or covers the face, hands or body; NO text on screen, NO captions, NO name tags, NO logos, NO words inside the visuals, NO scales of justice, NO outfit change, NO camera cut, NO tripod, NO camera or microphone or any studio equipment visible in frame, nothing in front of the avatar",
+    "camera": "Locked-off static shot, medium close-up framed from chest up, avatar centered in frame at the same size in every scene, eye level, 50mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter recorded in one studio session, natural skin texture, natural eye contact and accurate lip sync, soft even key light from the front, identical exposure and white balance in every scene",
+    "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene_01_intro",
+      "isIntro": true,
+      "dialogue": "Hi, I am Ravi from LawWorld. Can supporters of a political group attack doctors and still expect to get away with it? The apex court has sent a clear message on that.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D white doctor's coat with a stethoscope draped over it. Right anchor: a large 3D question mark rotating gently. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A pristine white doctor coat with a stethoscope hangs in mid-air and slowly turns, while a large glossy 3D question mark rises beside it and pulses gently."
+    },
+    {
+      "sceneId": "scene_02",
+      "dialogue": "Imagine a hospital where doctors are threatened by people with powerful backing. Complaints get filed, yet nothing moves, and those involved carry on as if their connections put them beyond the law.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D hospital building with a glowing medical cross. Right anchor: a 3D loudspeaker beside a small cluster of plain flags. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A modern 3D hospital building with a glowing medical cross at night; in front of its gates a loudspeaker and a cluster of plain unmarked pennants shake, the hospital lights flicker."
+    },
+    {
+      "sceneId": "scene_03",
+      "dialogue": "When such cases reach the apex court, the bench does not stay silent. It asks a pointed question: how can people accused of harming medical professionals simply continue to remain free?",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D courthouse facade with tall pillars. Right anchor: a 3D magnifying glass hovering over a case file. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A grand 3D courthouse with tall pillars seen from below; the camera glides toward a sealed case file that opens as a magnifying glass sweeps over it."
+    },
+    {
+      "sceneId": "scene_04",
+      "dialogue": "Why does this matter so much? Doctors and healthcare workers need a safe environment to treat patients. A hospital under threat cannot function, and every patient inside it pays the price.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D hospital bed with a heartbeat monitor line above it. Right anchor: a 3D protective shield carrying a medical cross. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A 3D hospital bed with a heartbeat monitor line racing above it, then a translucent protective shield with a medical cross closes around the bed."
+    },
+    {
+      "sceneId": "scene_05",
+      "dialogue": "Remember, an assault on a doctor is not a simple workplace dispute. Depending on the facts, it can attract serious criminal consequences, including custody, prosecution, and even a prison term.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a thick 3D law book standing upright. Right anchor: a 3D block of barred window bars. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A thick 3D law book opens on its own and its pages turn quickly; behind it, tall iron bars slide down from above and lock into place."
+    },
+    {
+      "sceneId": "scene_06",
+      "dialogue": "The bigger principle is simple and powerful. Being politically connected does not put anyone above the law. Party membership, rallies, or friends in high places change nothing in a courtroom.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D barrier sign with a diagonal stripe. Right anchor: a 3D courtroom bench with an empty judge's chair. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A 3D barrier with a diagonal stripe blocks a path; behind it a courtroom bench with an empty high-backed chair is slowly revealed under a single light."
+    },
+    {
+      "sceneId": "scene_07",
+      "dialogue": "Whether a person is an ordinary citizen or someone with powerful friends, the law must treat them exactly alike. Fair and independent enforcement is what every doctor, and every citizen, is owed.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: two 3D figures, one plain and one in a suit, standing on identical pedestals of equal height. Right anchor: a 3D level platform balanced perfectly flat. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "Two 3D figures, one in plain clothes and one in a suit, are placed on identical pedestals; a long level platform balances perfectly flat beneath them."
+    },
+    {
+      "sceneId": "scene_08",
+      "dialogue": "Political influence can never become a shield against accountability. The moment it does, the message to every hospital is that protection depends on who you know, not on what the law says.",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D shield with a visible crack running through it. Right anchor: a 3D chain of linked people icons slowly fading out. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A 3D shield develops a crack that spreads across its surface; behind it a chain of linked people icons slowly fades away into the grey."
+    },
+    {
+      "sceneId": "scene_09_outro",
+      "isOutro": true,
+      "dialogue": "So the key takeaway is this: no political connection places anyone above the law, and every doctor deserves to work in safety. Follow LawWorld for rulings that matter, explained in ninety seconds!",
+      "visual3D": "Ravi speaking to camera, same pose and framing as every other clip. Left anchor: a 3D glowing medical cross. Right anchor: a 3D rotating check mark beside a subtle follow-arrow icon. The 3D elements sit at the two fixed anchor positions (behind the left shoulder and behind the right shoulder), same size and depth as every other scene, softly lit, semi-transparent, never in front of the face, hands or body.",
+      "broll": "A glowing 3D medical cross floats and rotates; a large 3D check mark clicks into place beside it and a subtle arrow icon swings forward."
+    }
+  ],
+  "useLastFrameReference": true,
+  "transition": {
+    "type": "crossfade",
+    "durationSeconds": 0.25
+  },
+  "flowProjectUrl": "https://flow.google.com/project/78e57bce-cf0b-43a8-b258-1fba9b569b06",
+  "split": {
+    "avatarCropY": 180
+  }
+}
