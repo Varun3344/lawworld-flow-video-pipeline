@@ -797,18 +797,25 @@ export class FlowAutomation {
       })).catch(() => false);
   }
 
-  /** Idempotent: the pill is a toggle, so clicking it while the popup is open would close it again. */
+  /**
+   * Idempotent: the pill is a toggle, so clicking it while the popup is open would close it again.
+   *
+   * Must use a real Playwright click. A synthetic element.click() inside page.evaluate() does not open this
+   * Angular Material panel — it dispatches no trusted pointer events, so the panel never mounts and every
+   * subsequent lookup misses while still reporting success.
+   */
   private async openSettingsPill(): Promise<boolean> {
     if (await this.settingsPopupOpen()) return true;
-    const clicked = await this.page.evaluate(() => {
-      const b = Array.from(document.querySelectorAll('button'))
-        .find(x => /Video\s*·/.test(x.textContent || '') || (x.getAttribute('aria-label') || '') === 'Settings trigger');
-      if (!b) return false;
-      (b as HTMLElement).click();
-      return true;
-    }).catch(() => false);
-    await this.page.waitForTimeout(1000);
-    return clicked;
+    const byAria = this.page.locator('button[aria-label="Settings trigger"]').first();
+    if (await byAria.count().catch(() => 0)) {
+      await byAria.click({ timeout: 5000 }).catch(() => {});
+    } else {
+      const sel = await this.findFirstSelector(CONFIG.SELECTORS.SETTINGS_PILL_BTN);
+      if (!sel) return false;
+      await this.page.click(sel, { timeout: 5000 }).catch(() => {});
+    }
+    await this.page.waitForTimeout(1200);
+    return this.settingsPopupOpen();
   }
 
   private async selectModelFamily(model: string): Promise<boolean> {
