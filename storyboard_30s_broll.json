@@ -1,0 +1,88 @@
+{
+  "projectTitle": "LawWorld_30s_Case1_Broll",
+  "layout": "landscape",
+  "aspectRatio": "16:9",
+  "brollAspect": "16:9",
+  "brollStyle": "realistic",
+  "brollSetting": "Set in a real Indian legal setting: real Indian people in ordinary modern clothing, real Indian courthouse, government office and small-town locations. Documentary realism, no animation, no cartoon, no illustration, no 3D render.",
+  "clipDurationSeconds": 4,
+  "maxWordsPerClip": 33,
+  "speedMultiplier": 1.1,
+  "downloadFolder": "./downloads/LawWorld_30s_Case1",
+  "useLastFrameReference": true,
+  "transition": {
+    "type": "crossfade",
+    "durationSeconds": 0.25
+  },
+  "split": {
+    "captionSizeLandscape": 72,
+    "captionYLandscape": 930,
+    "captionKeywords": [
+      "affidavit",
+      "curable",
+      "investigation",
+      "chance",
+      "shuffle",
+      "precedent",
+      "pardon",
+      "approver",
+      "procedure",
+      "cruelty",
+      "alimony",
+      "crore",
+      "externment",
+      "gazette",
+      "nullity",
+      "statute",
+      "quashed",
+      "bench"
+    ]
+  },
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravishankar",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "a real modern law office interior: dark wood bookshelves filled with legal volumes softly out of focus behind him, warm daylight from a window to one side, shallow depth of field, identical framing and lighting in every scene",
+    "gestures": "Standing still in the same spot, relaxed open hand gestures at chest level while he speaks, hands visible in frame",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; the background room stays soft and out of focus behind him; NO objects, props, icons or graphics in the foreground and nothing in front of the avatar; NO text on screen, NO captions, NO name tags, NO logos, NO outfit change, NO camera cut, NO tripod, NO camera or microphone or any studio equipment visible in frame",
+    "camera": "Locked-off static shot, landscape 16:9, medium shot framed from the waist up with his hands visible, presenter centered in frame at the same size in every scene, eye level, 35mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter filmed in one session in a real office, natural skin texture, natural eye contact and accurate lip sync, soft key light from the front with gentle background falloff, identical exposure and white balance in every scene",
+    "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "b1_corridor",
+      "sanitizeDialogue": false,
+      "dialogue": "b-roll only",
+      "visual3D": "not used",
+      "brollRealistic": "Photoreal cinematic footage, no text: slow dolly through a sunlit Indian government office corridor, a middle-aged man in a plain shirt waiting on a wooden bench clutching a worn file, shafts of afternoon light, dust in the air, shallow depth of field, anamorphic 35mm look"
+    },
+    {
+      "sceneId": "b2_counter",
+      "sanitizeDialogue": false,
+      "dialogue": "b-roll only",
+      "visual3D": "not used",
+      "brollRealistic": "Photoreal cinematic footage, no text: a government service counter shutter being pulled down from inside, a hand withdrawing, papers left on the ledge, warm tungsten light, slow push-in, shallow depth of field, cinematic film grain"
+    },
+    {
+      "sceneId": "b3_affidavit",
+      "sanitizeDialogue": false,
+      "dialogue": "b-roll only",
+      "visual3D": "not used",
+      "brollRealistic": "Photoreal cinematic macro footage, no readable text: an official rubber stamp pressing onto a typed legal page on a dark wooden desk leaving a faint incomplete impression, ink bleeding slightly into the paper fibres, warm tungsten light, extreme shallow depth of field"
+    },
+    {
+      "sceneId": "b4_bench",
+      "sanitizeDialogue": false,
+      "dialogue": "b-roll only",
+      "visual3D": "not used",
+      "brollRealistic": "Photoreal cinematic footage, no text: a tall empty judge's bench in polished dark wood inside an Indian High Court, sunlight falling through high arched windows onto stacked case bundles tied in red cloth, slow steady dolly, no people, rich natural colour"
+    }
+  ],
+  "model": "Veo 3.1 - Quality",
+  "resolution": ""
+}
