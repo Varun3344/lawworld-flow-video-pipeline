@@ -358,7 +358,13 @@ export class FlowAutomation {
       brollDownloader.clearUrls(scene.sceneId);
       await this.ensureGalleryView();
 
-      const fallbackSubject = scene.visual3D.replace(/^Ravi[^.]*\.\s*/i, '').replace(/Left anchor:|Right anchor:/g, '').replace(/The 3D elements sit.*$/s, '').trim();
+      // visual3D describes the AVATAR shot, so a B-roll-only storyboard legitimately
+      // omits it. This used to be dereferenced unconditionally and took the whole run
+      // down with "Cannot read properties of undefined (reading 'replace')" before the
+      // || chain below could fall back.
+      const fallbackSubject = (scene.visual3D || '')
+        .replace(/^Ravi[^.]*\.\s*/i, '').replace(/Left anchor:|Right anchor:/g, '')
+        .replace(/The 3D elements sit.*$/s, '').trim();
       const subject = brollStyle === 'realistic'
         ? (scene.brollRealistic || scene.broll || fallbackSubject)
         : brollStyle === '3d'

@@ -1,0 +1,30 @@
+{
+  "_comment": "Two B-roll clips for the INTRO of the Bhag Singh reel. The user's rule: in the upper half only the court photograph and the judges' portraits may be stills — everything else must be Flow animation matched to what is being narrated. These replace the static LAWWORLD card (0-6.3s, while he introduces himself and the channel) and the static headline card (12.95-17.5s, while he names Section 100 and hands off to the story). Run with --broll: no avatar, no dialogue, so Flow is never asked to name a judge or report news, both of which it refuses.",
+  "projectTitle": "LawWorld_Broll_Intro",
+  "aspectRatio": "9:16",
+  "brollAspect": "9:16",
+  "brollStyle": "realistic",
+  "brollSetting": "Set in Indian legal surroundings: an advocate's chambers, law reports, case files and land records. Warm, authoritative, documentary realism. Any people are Indian and in ordinary professional clothing.",
+  "clipDurationSeconds": 8,
+  "downloadFolder": "./downloads/LawWorld_Broll_Intro",
+  "useLastFrameReference": false,
+  "globalStyle": {
+    "avatar": "",
+    "useAccountAvatar": false,
+    "background": "",
+    "negativePrompts": "NO readable text, NO letters or numbers on screen, NO book titles, NO signage with words, NO logos, NO watermarks; NO recognisable real person, NO judge, NO politician; NO judge presiding in a courtroom; NO cartoon, NO illustration, NO 3D render",
+    "camera": "Cinematic vertical 9:16, 35mm lens look, shallow depth of field, smooth slow camera movement, eye level",
+    "realism": "Photorealistic live-action documentary footage, warm motivated light, natural texture, fine film grain, rich filmic colour grade"
+  },
+  "scenes": [
+    {
+      "sceneId": "i1_chambers",
+      "brollRealistic": "A traditional Indian advocate's chambers at golden hour: tall wooden shelves packed with worn red and maroon bound law reports, a heavy desk in the foreground with neat stacks of case files tied in red string, a brass desk lamp lit, warm light falling through a tall window with slow dust in the air; slow drift forward between the shelves, nobody in frame."
+    },
+    {
+      "sceneId": "i2_landrecords",
+      "brollRealistic": "Close on a pair of hands untying the red cloth binding of an old bundle of land records on a dark wooden desk and folding the cloth back to reveal layered yellowed papers; a brass lamp throws warm light across them; very slow push in, shallow focus on the topmost sheet."
+    }
+  ],
+  "flowProjectUrl": "https://flow.google.com/project/ea0848b1-5d2d-4c9f-bc17-4a735bda71dc"
+}

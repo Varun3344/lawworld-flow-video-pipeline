@@ -26,6 +26,8 @@
   "dependencies": {
     "commander": "^12.1.0",
     "dotenv": "^16.4.5",
+    "openai": "^6.49.0",
+    "pdf-parse": "^2.4.5",
     "playwright": "^1.46.0",
     "playwright-chromium": "^1.46.0"
   },

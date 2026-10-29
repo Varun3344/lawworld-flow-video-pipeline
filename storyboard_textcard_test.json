@@ -1,0 +1,68 @@
+{
+  "projectTitle": "LawWorld_TextCard_Test",
+  "layout": "landscape",
+  "aspectRatio": "16:9",
+  "brollAspect": "16:9",
+  "brollStyle": "realistic",
+  "brollSetting": "Set in a real Indian legal setting: real Indian people in ordinary modern clothing, real Indian courthouse, government office and small-town locations. Documentary realism, no animation, no cartoon, no illustration, no 3D render.",
+  "clipDurationSeconds": 4,
+  "maxWordsPerClip": 33,
+  "speedMultiplier": 1.1,
+  "downloadFolder": "./downloads/LawWorld_TextCard_Test",
+  "useLastFrameReference": true,
+  "transition": {
+    "type": "crossfade",
+    "durationSeconds": 0.25
+  },
+  "split": {
+    "captionSizeLandscape": 72,
+    "captionYLandscape": 930,
+    "captionKeywords": [
+      "affidavit",
+      "curable",
+      "investigation",
+      "chance",
+      "shuffle",
+      "precedent",
+      "pardon",
+      "approver",
+      "procedure",
+      "cruelty",
+      "alimony",
+      "crore",
+      "externment",
+      "gazette",
+      "nullity",
+      "statute",
+      "quashed",
+      "bench"
+    ]
+  },
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravishankar",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "a real modern law office interior: dark wood bookshelves filled with legal volumes softly out of focus behind him, warm daylight from a window to one side, shallow depth of field, identical framing and lighting in every scene",
+    "gestures": "Standing still in the same spot, relaxed open hand gestures at chest level while he speaks, hands visible in frame",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; the background room stays soft and out of focus behind him; NO objects, props, icons or graphics in the foreground and nothing in front of the avatar; NO text on screen, NO captions, NO name tags, NO logos, NO outfit change, NO camera cut, NO tripod, NO camera or microphone or any studio equipment visible in frame",
+    "camera": "Locked-off static shot, landscape 16:9, medium shot framed from the waist up with his hands visible, presenter centered in frame at the same size in every scene, eye level, 35mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter filmed in one session in a real office, natural skin texture, natural eye contact and accurate lip sync, soft key light from the front with gentle background falloff, identical exposure and white balance in every scene",
+    "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "card_test",
+      "sanitizeDialogue": false,
+      "dialogue": "b-roll only",
+      "visual3D": "not used",
+      "brollRealistic": "Premium cinematic 3D motion graphics on a deep black background. Three lines of bold white uppercase text appear one after another, stacked with generous spacing, spelled exactly: THE POLICE, then THE LOKAYUKTA, then THE GOVERNOR. A thin vertical gold bar sits beside whichever line has just appeared. Small gold letter-spaced heading above them reading WHERE HE WENT FIRST. Elegant editorial typography, crisp sharp lettering, subtle warm golden rim light, shallow depth of field, slow smooth camera push-in, dark luxurious mood, no other objects in frame"
+    }
+  ],
+  "model": "Veo 3.1 - Quality",
+  "resolution": "",
+  "flowProjectUrl": "https://flow.google.com/project/aa1bf176-74fc-48fb-8a3c-dca8027e63d3"
+}

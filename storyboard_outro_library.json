@@ -1,0 +1,52 @@
+{
+  "_comment": "REUSABLE LawWorld advert outros — generate ONCE, then append one to every reel. The advert never changes between judgments, so rendering it per video wasted a Flow generation each time. Four variants so consecutive videos do not end identically; rotate them. These clips carry NO case-specific content — the case conclusion belongs in the last STORY clip, and this segment is purely the product. Every feature named is real, taken from lawworld.ai's own list (LawChat, Your Cases, Case Laws, Commentary, Drafting, Doc Compiler, Team Chat, Client Billing, Calendar, Steno, Translation, Client Portal, E-Books) — never advertise a capability the site does not list. Dialogue is sized at ~31 words because the @me avatar speaks at 3.1 words/sec; run src/checkFill.ts before generating. Output lands in downloads/LawWorld_Outro_Library and should be copied to assets/outro_library/ for reuse.",
+  "projectTitle": "LawWorld_Outro_Library",
+  "aspectRatio": "9:16",
+  "clipDurationSeconds": 10,
+  "maxWordsPerClip": 33,
+  "speedMultiplier": 1.1,
+  "downloadFolder": "./downloads/LawWorld_Outro_Library",
+  "useLastFrameReference": false,
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravishankar",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "solid plain seamless mid-grey studio background with soft even lighting and nothing else in the frame",
+    "gestures": "Standing still in the same spot, natural calm hand gestures kept below chest level",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; NO objects, icons, graphics or props anywhere in the frame; NO text on screen, NO captions, NO name tags, NO logos, NO outfit change, NO camera cut, NO tripod, NO camera or microphone or any studio equipment visible in frame, nothing in front of the avatar",
+    "camera": "Locked-off static shot, medium close-up framed from chest up, avatar centered in frame at the same size in every scene, eye level, 50mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter recorded in one studio session, natural skin texture, natural eye contact and accurate lip sync, soft even key light from the front, identical exposure and white balance in every scene",
+    "delivery": "Warm, confident and direct, like a trusted colleague recommending something he uses himself; brisk pace, continuous speech, no long pauses; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "outro_a_research",
+      "sanitizeDialogue": false,
+      "dialogue": "LawWorld is the all in one A I platform for advocates in India. Search Supreme Court and High Court judgments, and draft petitions with A I. Visit lawworld dot A I.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "outro_b_lawchat",
+      "sanitizeDialogue": false,
+      "dialogue": "Need an answer fast? LawChat gives you A I legal consultation, and our commentary explains the acts, rules and regulations in plain language. LawWorld dot A I, built for Indian advocates.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "outro_c_paperwork",
+      "sanitizeDialogue": false,
+      "dialogue": "Stop losing hours to paperwork. LawWorld compiles your documents into clean files, transcribes your dictation with Steno, and translates your drafts into regional languages. Visit lawworld dot A I today.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "outro_d_practice",
+      "sanitizeDialogue": false,
+      "dialogue": "Run your whole practice in one place. Manage every case, track your hearings, bill your clients, and give them a portal to follow their own matter. LawWorld dot A I.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    }
+  ],
+  "flowProjectUrl": "https://flow.google.com/project/bc7621a3-2eee-4328-946e-c8789a1cb44b"
+}

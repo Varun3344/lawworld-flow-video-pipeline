@@ -1,0 +1,82 @@
+{
+  "_comment": "Flow AVATAR clips for the story half of the Bhag Singh reel (2026 INSC 983). The division is fixed by the user: HeyGen renders ONLY the intro (it is the one place judges are named, which Flow refuses); everything after it — presenter and B-roll both — comes from Flow with the @me verified avatar and its verified voice. 8 clips at 10s, speedMultiplier 1.1, so ~72s of story and outro behind an ~18s HeyGen intro = ~90s. No judge is named in any dialogue and nothing is framed as a party admitting fault, because Flow refuses both. B-roll for these beats already exists in downloads/LawWorld_Broll_BhagSingh. The outro clip doubles as the product advert: it names LawWorld and two real features taken from lawworld.ai (Case Laws search, AI drafting). Do not invent features — the site lists LawChat, Your Cases, Case Laws, Commentary, Drafting, Doc Compiler, Team Chat, Client Billing, Calendar, Steno, Translation, Client Portal and E-Books. DIALOGUE LENGTH IS CRITICAL: the @me avatar speaks at ~3.1 words/sec (measured over eight delivered clips), so a 10s clip needs ~31 words. The first pass ran 24-27 and left 1.3-2.1s of dead air per clip — 12.4s across the reel — which also invites the avatar to repeat phrases to pad the duration. maxWordsPerClip is a CEILING, not a target. Run `npx tsx src/checkFill.ts <storyboard>` before generating.",
+  "projectTitle": "LawWorld_Story_BhagSingh",
+  "aspectRatio": "9:16",
+  "brollAspect": "9:16",
+  "brollStyle": "realistic",
+  "clipDurationSeconds": 10,
+  "maxWordsPerClip": 33,
+  "speedMultiplier": 1.1,
+  "downloadFolder": "./downloads/LawWorld_Story_BhagSingh",
+  "useLastFrameReference": true,
+  "transition": {
+    "type": "crossfade",
+    "durationSeconds": 0.25
+  },
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravishankar",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "solid plain seamless mid-grey studio background with soft even lighting and nothing else in the frame",
+    "gestures": "Standing still in the same spot, natural calm hand gestures kept below chest level",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; NO objects, icons, graphics or props anywhere in the frame; NO text on screen, NO captions, NO name tags, NO logos, NO outfit change, NO camera cut, NO tripod, NO camera or microphone or any studio equipment visible in frame, nothing in front of the avatar",
+    "camera": "Locked-off static shot, medium close-up framed from chest up, avatar centered in frame at the same size in every scene, eye level, 50mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter recorded in one studio session, natural skin texture, natural eye contact and accurate lip sync, soft even key light from the front, identical exposure and white balance in every scene",
+    "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "s01_dispute",
+      "sanitizeDialogue": false,
+      "dialogue": "In nineteen eighty one a dispute began over a small piece of farmland in Muktsar, Punjab, less than five kanals. One side held a registered sale deed from nineteen sixty five.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "s02_dera",
+      "sanitizeDialogue": false,
+      "dialogue": "On the other side stood a Dera, a religious institution. It said the land had been dedicated for religious purposes long before that sale ever happened, so nothing could be sold.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "s03_register",
+      "sanitizeDialogue": false,
+      "dialogue": "Everything turned on one single line written in an old revenue register. The land was recorded there as held without rent, for Dharam Arth, meaning for religious and charitable purposes.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "s04_dismissed",
+      "sanitizeDialogue": false,
+      "dialogue": "Both the trial court and the first appellate court read that single line as proof that the land now belonged to the Dera, and on that basis the suit was dismissed twice.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "s05_highcourt",
+      "sanitizeDialogue": false,
+      "dialogue": "The High Court took a different view and decreed the suit in favour of the buyers. From there the matter travelled up to the Supreme Court for a final answer.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "s06_possession",
+      "sanitizeDialogue": false,
+      "dialogue": "The Supreme Court held that revenue records prove only who was in possession, not who actually owns. They are maintained to collect revenue. They cannot by themselves transfer title.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "s07_adverse",
+      "sanitizeDialogue": false,
+      "dialogue": "And long possession is not the same as adverse possession. You must plead and prove the exact moment your possession turned hostile to the true owner. Without that, the clock never starts.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    },
+    {
+      "sceneId": "s08_outro",
+      "sanitizeDialogue": false,
+      "dialogue": "The appeal was dismissed. Revenue entries show possession, not ownership. LawWorld is the all in one A I platform for advocates in India. Search judgments, draft petitions, manage every case.",
+      "visual3D": "Ravishankar speaking to camera, same pose and framing as every other clip, plain grey background, no props, no graphics."
+    }
+  ],
+  "flowProjectUrl": "https://flow.google.com/project/a212aa12-5dc6-4ca2-92c3-a51156846f07"
+}

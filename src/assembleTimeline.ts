@@ -179,7 +179,10 @@ spec.segments.forEach((seg: any, i: number) => {
     const at = seg.at ?? 0;
     // An insert shorter than its slot is slowed to fit rather than looped — a visible loop reads as an error.
     const pts = srcDur - at < len ? (len / Math.max(0.1, srcDur - at)) : 1;
-    const bars = letterboxCrop(src);
+    // Only generated footage can arrive with baked-in bars. Motion cards are intentionally dark with empty
+    // space, which cropdetect happily mistakes for letterboxing — it was cropping into the card design and
+    // scaling the remainder back up.
+    const bars = seg.source === 'broll' ? letterboxCrop(src) : null;
     if (bars) console.log(`[Assemble] seg ${i}: letterbox bars trimmed (${bars})`);
     const wm = (bars ? bars + ',' : '') + (seg.source === 'broll' ? 'crop=trunc(iw*0.888/2)*2:trunc(ih*0.888/2)*2:0:0,' : '');
     sh(`ffmpeg -v error -y -ss ${at} -i "${src}" -an -t ${len} -vf "${wm}`

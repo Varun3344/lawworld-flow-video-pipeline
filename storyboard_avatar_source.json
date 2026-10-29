@@ -1,0 +1,38 @@
+{
+  "_comment": "Generates the presenter still that HeyGen animates for the intro, so the intro presenter is the same generation as the story presenter. EVERY style field is copied verbatim from the known-good storyboard_test_judges.json, camera included. An earlier version widened the camera to 'waist up' to avoid reported edge-cropping; that report turned out to be the user's QuickTime window, and the wider framing made the presenter far too small to match the delivered Kerala cut. A tight crop of the wide still cannot recover it either - Flow caps at 720p, so a chest-up crop would be a ~270px region upscaled 4x. Keep the proven chest-up camera. Also note Flow refuses any news framing here: 'accurate updates on the judgements' and even a 'neutral newsreader tone' delivery both drew 'reputational risk / misrepresent current events' refusals.",
+  "projectTitle": "LawWorld_Avatar_Source",
+  "aspectRatio": "9:16",
+  "clipDurationSeconds": 10,
+  "speedMultiplier": 1,
+  "useLastFrameReference": false,
+  "downloadFolder": "./downloads/LawWorld_Avatar_Source",
+  "transition": {
+    "type": "crossfade",
+    "durationSeconds": 0.25
+  },
+  "globalStyle": {
+    "avatar": "@me",
+    "useAccountAvatar": true,
+    "hostName": "Advocate Ravishankar",
+    "channelName": "LawWorld",
+    "voice": "@me verified avatar voice (identical pitch, tone, accent in every clip)",
+    "outfit": "crisp white shirt and black blazer (identical in every scene)",
+    "background": "solid plain seamless mid-grey studio background with soft even lighting and nothing else in the frame",
+    "gestures": "Standing still in the same spot, natural calm hand gestures kept below chest level",
+    "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
+    "negativePrompts": "Avatar stays centered in the foreground with face and body fully visible at all times; NO objects, icons, graphics or props anywhere in the frame; NO text on screen, NO captions, NO name tags, NO logos, NO outfit change, NO camera cut, NO tripod, NO camera or microphone or any studio equipment visible in frame, nothing in front of the avatar",
+    "camera": "Locked-off static shot, medium close-up framed from chest up, avatar centered in frame at the same size in every scene, eye level, 50mm lens look, no zoom, no pan, no camera movement; the camera itself is never visible",
+    "realism": "Photorealistic live-action footage of a real human presenter recorded in one studio session, natural skin texture, natural eye contact and accurate lip sync, soft even key light from the front, identical exposure and white balance in every scene",
+    "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
+  },
+  "scenes": [
+    {
+      "sceneId": "scene_01_source",
+      "isIntro": true,
+      "sanitizeDialogue": false,
+      "dialogue": "Hi, I am Ravi from LawWorld. Here is a short introduction before we begin, recorded in the studio at a calm and steady pace.",
+      "visual3D": "A man in a crisp white shirt and black blazer standing squarely to camera against a plain seamless mid-grey studio backdrop, framed from the waist up with generous empty space on both sides and above his head, arms relaxed at his sides, sharp focus on his face, no props, no graphics, no text."
+    }
+  ],
+  "flowProjectUrl": "https://flow.google.com/project/847a41a7-340a-492d-8cb6-539025ded5fc"
+}

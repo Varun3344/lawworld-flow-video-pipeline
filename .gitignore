@@ -4,7 +4,7 @@ dist/
 
 # ── Credentials & browser profiles ────────────────────────────────────
 # These hold live Google login sessions. The old rule only matched "user_data/",
-# which left user_data_ashokpalani0504/ and user_data_windows_backup/ exposed.
+# which left the per-account and backup profile directories exposed.
 user_data*/
 *.env
 .env*
@@ -34,3 +34,9 @@ storyboard_failed_prompts.json
 # ── OS ────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+
+# ── Pipeline inputs & outputs (regenerated; judgment PDFs are not ours to publish) ──
+judgments/
+shorts_out/
+avatar_candidates/
+*.prebroll

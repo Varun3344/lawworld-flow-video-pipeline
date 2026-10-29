@@ -1,0 +1,62 @@
+{
+  "_comment": "Narrative B-roll for the Bhag Singh land reel (2026 INSC 983). Written the way the delivered Kerala cut was written: each clip RE-ENACTS its story beat with real people doing a specific thing in a specific place, not stock footage of fields and registers. A first pass of generic imagery was rejected for exactly that reason and is kept at downloads/LawWorld_Broll_BhagSingh_generic. Run with --broll: no avatar, no dialogue, so Flow is never asked to name a judge or to report news, both of which it refuses. NOTE: do not prompt anyone to WALK toward or away from camera. b05 originally said the advocate 'climbs the steps'; Flow rendered him descending toward the lens while the camera retreated, so his legs read as walking backwards. Directional gait is the single least reliable thing Flow renders — prefer a still subject with camera movement, or a seated/handheld action.",
+  "projectTitle": "LawWorld_Broll_BhagSingh",
+  "aspectRatio": "9:16",
+  "brollAspect": "9:16",
+  "brollStyle": "realistic",
+  "brollSetting": "Set in rural Muktsar district, Punjab, and in small-town north Indian court and record buildings. All people are Punjabi: older men in turbans, women in salwar kameez with dupattas, simple everyday cotton clothes. Flat wheat farmland, brick farmhouses, dusty lanes, tube wells. The period feel runs from the nineteen eighties to the present day. Documentary realism.",
+  "clipDurationSeconds": 8,
+  "downloadFolder": "./downloads/LawWorld_Broll_BhagSingh",
+  "useLastFrameReference": false,
+  "globalStyle": {
+    "avatar": "",
+    "useAccountAvatar": false,
+    "background": "",
+    "negativePrompts": "NO readable text, NO letters or numbers on screen, NO signage with words, NO logos, NO watermarks; NO recognisable real person, NO politician, NO judge, NO celebrity; NO judge presiding in a courtroom; NO cartoon, NO illustration, NO 3D render",
+    "camera": "Locked-off or very slow drifting camera, vertical 9:16, cinematic depth of field, eye level",
+    "realism": "Photorealistic documentary footage, natural daylight, natural skin texture, film grain, muted warm colour grade"
+  },
+  "scenes": [
+    {
+      "sceneId": "b01_dispute",
+      "brollRealistic": "Two Punjabi farming families stand facing each other on either side of a narrow raised earthen boundary running through a green wheat field in the early morning; an older man in a turban on one side points firmly down at the ground while a man opposite shakes his head; the others watch tensely with folded arms; slow push in."
+    },
+    {
+      "sceneId": "b02_deed_vs_dera",
+      "brollRealistic": "An elderly Sikh man sits at a wooden table in a brick farmhouse room carefully unfolding a large old stamped legal document with both hands, reading glasses low on his nose, warm window light; then cut to a small rural shrine with a saffron pennant where villagers sit cross-legged on the floor with heads bowed."
+    },
+    {
+      "sceneId": "b03_register",
+      "brollRealistic": "A village record keeper in a turban opens an enormous cloth-bound handwritten land register on a desk in a dim record room and draws his finger slowly along one single line on the page; dust hangs in a shaft of afternoon light; very slow push in on his hand."
+    },
+    {
+      "sceneId": "b04_dismissed_twice",
+      "brollRealistic": "A Punjabi family walks slowly down worn stone steps in the afternoon, shoulders down, one man carrying a cloth bundle of papers; the frame is tight on the steps and the family so only plain weathered stone and a blank wall are behind them, with no doorway, no noticeboard and no signage of any kind anywhere in shot; slow push in."
+    },
+    {
+      "sceneId": "b05_high_court",
+      "brollRealistic": "A low angle looking up the tall stone columns and carved pediment of a grand colonial-era Indian court building in bright morning light, the camera tilting slowly upward; in the foreground at the foot of the steps an advocate in a black coat and white neck bands stands completely still with his back three-quarters to camera, holding a thick bundle of files tied in red cloth under his arm, looking up at the building. Only the camera moves; nobody walks."
+    },
+    {
+      "sceneId": "b06_revenue_purpose",
+      "brollRealistic": "Close on a clerk's hands in a government revenue office stamping and stacking receipts beside an iron cash box and a ledger; coins and worn banknotes are counted into the box; slow rack focus from the money to the open ledger page behind it."
+    },
+    {
+      "sceneId": "b07_hostile_moment",
+      "brollRealistic": "At dusk a man drives a wooden boundary stake into the edge of a wheat field with a heavy mallet while far behind him another man stands motionless at the far edge of the field watching; long lens, the watching figure soft in the background; then a close shot of an old brass pendulum clock beginning to swing."
+    },
+    {
+      "sceneId": "b08_contradiction",
+      "brollRealistic": "A middle-aged Punjabi man stands alone in the middle of his field holding one folded document in each hand, looking down at the left hand then the right hand then back again, uncertain; wind moves the crop around him; slow orbit around him."
+    },
+    {
+      "sceneId": "b09_weighing",
+      "brollRealistic": "A single old handwritten register page lies open on a plain dark wooden desk, lit by one warm desk lamp from the left; a hand holding a round brass magnifying glass moves it slowly across the page. One continuous unbroken shot from directly overhead, filling the whole frame edge to edge, with no inset panel, no picture within a picture, no border or frame of any kind."
+    },
+    {
+      "sceneId": "b10_generations",
+      "brollRealistic": "An elderly Punjabi farmer in a turban and his young grandson stand together at the edge of their wheat field at sunset, both looking out across the land, the old man's hand resting on the boy's shoulder; seen from behind in warm rim light; very slow push in."
+    }
+  ],
+  "flowProjectUrl": "https://flow.google.com/project/52e8dde0-0d77-4253-bdfa-52d42c790da8"
+}

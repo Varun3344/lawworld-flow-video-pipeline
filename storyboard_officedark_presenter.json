@@ -48,29 +48,35 @@
     "background": "the same private office with deep forest-green panelled walls, a framed botanical print, a tall plant and a walnut bookshelf \u2014 but almost entirely swallowed by darkness, only the faintest gold edge catching one line of panelling, identical in every scene",
     "gestures": "Seated upright and still, well back from the camera, forearms resting on the desk with small restrained gestures, he stays seated throughout",
     "audio": "@me verified avatar voice ONLY, continuous speech filling the full 10 seconds at a brisk explainer pace, NO background music, NO silence at start or end",
-    "negativePrompts": "He stays seated behind the desk, set well back from camera; the image stays very dark and high contrast with one side of his face in darkness. NO lamp, NO light fixture, NO studio light, NO softbox, NO light stand, NO spotlight, NO visible light source of any kind anywhere in the frame; NO fill light, NO second light, NO soft even illumination, NO flat lighting, NO daylight, NO brightly lit background, NO evenly lit face; NO gap beneath the desk, NO table legs, NO chair legs, NO floor visible; nothing in his hands; NO text, NO captions, NO logos, NO outfit change, NO camera cut, NO standing up",
-    "camera": "Locked-off static shot, landscape 16:9. He is SEATED well back behind a large solid walnut desk so there is clear space between him and the camera and the dark room is visible around and behind him \u2014 a wider shot, not a close-up. Framed from the waist up, small in frame, with the desk running across the bottom; the desk front is solid so no gap, no table legs, no chair legs and no floor are visible. Eye level, 50mm lens look, no zoom, no pan, no camera movement",
-    "realism": "Photorealistic film-noir footage, extreme chiaroscuro. The left side of his face and his left shoulder glow warm gold, while the right side of his face and body fall into complete darkness with no detail at all. The room behind him is almost entirely black; only a faint gold edge traces one line of wall panelling and the near edge of the desk. Fine golden dust motes drift slowly in the air. Deeply crushed blacks, very high contrast, no fill of any kind, roughly eighty percent of the frame is pure black. Natural skin texture, accurate lip sync, identical exposure in every scene",
+    "negativePrompts": "He stays seated far back behind the desk, centred in frame, never close to the camera; his whole face is evenly lit on both sides. NO dust, NO dust motes, NO floating specks, NO particles or sparkles in the air, NO bokeh dots, NO haze; NO half of the face in shadow, NO single-sided lighting, NO silhouette; NO lamp, NO light fixture, NO studio light, NO light stand visible anywhere in frame; NO gap beneath the desk, NO table legs, NO chair legs, NO floor visible; nothing in his hands; NO text, NO captions, NO logos, NO outfit change, NO camera cut, NO standing up",
+    "camera": "Locked-off static shot, landscape 16:9. He is SEATED far back behind a large solid walnut desk, centred exactly in the middle of the frame with generous space above him and on both sides, so the room reads clearly around him \u2014 a wide shot, he is small in frame, never close to the lens. Framed from the chest up with the desk running across the bottom; the desk front is solid so no gap, no table legs, no chair legs and no floor are visible. Eye level, 50mm lens look, no zoom, no pan, no camera movement",
+    "realism": "Photorealistic cinematic footage in a dark room. Warm golden light falls evenly on BOTH sides of his face, modelling it from the left and the right at once so neither side is lost in shadow and his whole face is clearly visible and well lit, with a soft gold rim along both shoulders. The room behind him stays dark with deep blacks. The air is completely clear. Natural skin texture, accurate lip sync, identical exposure and framing in every scene",
     "delivery": "Energetic educational explainer style, like a confident teacher: brisk pace, continuous speech, no long pauses, natural emphasis on key words; speak the dialogue exactly once, word for word, never repeat, stretch or slow down a word"
   },
   "scenes": [
     {
       "sceneId": "s1_hook",
       "sanitizeDialogue": false,
-      "visual3D": "Ravishankar seated well back behind the walnut desk in a nearly black room, the left side of his face glowing warm gold and the right side lost in darkness, speaking to camera, same framing in every clip, no props, no visible lamps, no text.",
+      "visual3D": "Ravishankar seated far back behind the walnut desk, centred in the frame, his whole face evenly lit from both sides by warm golden light in an otherwise dark room, clear air, speaking to camera, same framing in every clip, no props, no text.",
       "dialogue": "A man in Bengaluru complained about a civic amenity site allotment. He went to the police, to the Lokayukta, even to the Governor. Nobody acted."
     },
     {
       "sceneId": "s2_divert",
       "sanitizeDialogue": false,
-      "visual3D": "Ravishankar seated well back behind the walnut desk in a nearly black room, the left side of his face glowing warm gold and the right side lost in darkness, speaking to camera, same framing in every clip, no props, no visible lamps, no text.",
+      "visual3D": "Ravishankar seated far back behind the walnut desk, centred in the frame, his whole face evenly lit from both sides by warm golden light in an otherwise dark room, clear air, speaking to camera, same framing in every clip, no props, no text.",
       "dialogue": "So he filed a private complaint before a Magistrate. But the trial court found an unverified affidavit, and diverted the case into a Section two twenty three enquiry."
     },
     {
       "sceneId": "s3_ruling",
       "sanitizeDialogue": true,
-      "visual3D": "Ravishankar seated well back behind the walnut desk in a nearly black room, the left side of his face glowing warm gold and the right side lost in darkness, speaking to camera, same framing in every clip, no props, no visible lamps, no text.",
+      "visual3D": "Ravishankar seated far back behind the walnut desk, centred in the frame, his whole face evenly lit from both sides by warm golden light in an otherwise dark room, clear air, speaking to camera, same framing in every clip, no props, no text.",
       "dialogue": "The ruling went the other way. An unverified affidavit is a curable defect, not a fatal one. It cannot end a complaint before that complaint has even begun."
+    },
+    {
+      "sceneId": "s4_meaning",
+      "sanitizeDialogue": true,
+      "visual3D": "Ravishankar seated far back behind the walnut desk, centred in the frame, his whole face evenly lit from both sides by warm golden light in an otherwise dark room, clear air, speaking to camera, same framing in every clip, no props, no text.",
+      "dialogue": "So the complaint goes back to where it started. A procedural slip cannot decide a case on its merits. That protection exists for the complainant, and it has been restored."
     }
   ],
   "model": "Omni 1.1 Flash",
